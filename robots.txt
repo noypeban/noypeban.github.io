@@ -1,0 +1,4 @@
+Sitemap: https://noypeban.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: noypeban.github.io
