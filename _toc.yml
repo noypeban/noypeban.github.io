@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - caption: Math
+    chapters:
+    - glob: math/*
+  - caption: アルゴリズム
+    chapters:
+    - glob: math/algorithm/*
+  - caption: sample code
+    chapters:
+    - glob: samplecode/*
+  - caption: other
+    chapters:
+    - glob: other/*
