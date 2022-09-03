@@ -1,0 +1,1559 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>行列 &#8212; noypeban.github.io</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="最適化アルゴリズム" href="optimization.html" />
+    <link rel="prev" title="指数・対数" href="log.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">noypeban.github.io</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to my scrap book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="beyes.html">
+   ベイズの定理
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cond_prob.html">
+   条件付き確率
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   分布
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="information_theory.html">
+   情報理論
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="log.html">
+   指数・対数
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   行列
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimization.html">
+   最適化アルゴリズム
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  アルゴリズム
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithm/kmeans.html">
+   k-means
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithm/kmeans%2B%2B.html">
+   k-means++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithm/svm.html">
+   SVM
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  sample code
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../samplecode/preprocess.html">
+   label encoding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../samplecode/regression.html">
+   Regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  other
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../other/jupyter-book.html">
+   jupyter-bookの使い方
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../other/latex.html">
+   Latexの覚書
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../other/vscode.html">
+   vscode関係
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/noypeban/noypeban.github.io/master?urlpath=tree/docs/math/matrix.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/noypeban/noypeban.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/noypeban/noypeban.github.io/issues/new?title=Issue%20on%20page%20%2Fmath/matrix.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/math/matrix.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/math/matrix.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   行列の掛け算
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   行列式
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     求め方
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#x2">
+       2x2行列
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#x3">
+       3x3行列(サラスの公式)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     交換性
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   逆行列
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     求め方
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       2x2行列の逆行列
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       掃き出し法
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numpy">
+       numpy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   固有値・固有値ベクトル
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     求め方
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       固有値
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       固有ベクトル
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   固有値分解
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     求め方
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       numpy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   対角化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     対角化のメリット
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     対角化可能
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id22">
+   特異値分解
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     手順
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>行列</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   行列の掛け算
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   行列式
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     求め方
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#x2">
+       2x2行列
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#x3">
+       3x3行列(サラスの公式)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     交換性
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   逆行列
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     求め方
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       2x2行列の逆行列
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       掃き出し法
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numpy">
+       numpy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   固有値・固有値ベクトル
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     求め方
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       固有値
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       固有ベクトル
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   固有値分解
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     求め方
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       numpy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   対角化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     対角化のメリット
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     対角化可能
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id22">
+   特異値分解
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     手順
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>行列<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>行列の掛け算<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix}
+a &amp; b \\
+c &amp; d \\
+\end{pmatrix}\\
+B = \begin{pmatrix}
+e\\
+f\\
+\end{pmatrix}
+\\
+A \cdot B = \begin{pmatrix}
+a*e + b*f\\
+c*e+d*f\\
+\end{pmatrix}
+\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="c1"># array([16,14])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>計算できる条件：Aの列数=Bの行数</p></li>
+<li><p>結果.shape=(前の行数, 後ろの列数)</p></li>
+</ul>
+</div>
+</section>
+<section id="id3">
+<h2>行列式<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{pmatrix}
+a&amp;b\\
+c&amp;d
+\end{pmatrix}の時、Aの行列式を\\
+\det A、 |A|、
+\begin{vmatrix}
+a&amp;b\\
+c&amp;d
+\end{vmatrix}と表し、\\
+|A|=a*d-b*c
+\end{split}\]</div>
+<section id="id4">
+<h3>求め方<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<section id="x2">
+<h4>2x2行列<a class="headerlink" href="#x2" title="Permalink to this headline">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+a&amp;b\\
+c&amp;d
+\end{vmatrix}
+=a*d-b*c
+\end{split}\]</div>
+</section>
+<section id="x3">
+<h4>3x3行列(サラスの公式)<a class="headerlink" href="#x3" title="Permalink to this headline">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+a_{11} &amp; a_{12} &amp; a_{13}\\
+a_{21} &amp; a_{22} &amp; a_{23}\\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{vmatrix}\\
+=a_{11} a_{22} a_{33}+a_{12} a_{23}a_{31}+a_{13}a_{32}a_{21}\\
+-a_{13}a_{22} a_{31}
+-a_{12}a_{21}a_{33}
+-a_{11}a_{32} a_{23}
+\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h3>交換性<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>行列の2列を入れ替えた場合、または2行を入れ替えた場合、行列式は元の行列式の-1倍になる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+a_{11} &amp; a_{12} &amp; a_{13}\\
+a_{21} &amp; a_{22} &amp; a_{23}\\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{vmatrix}
+=
+-
+\begin{vmatrix}
+a_{21} &amp; a_{22} &amp; a_{23}\\
+a_{11} &amp; a_{12} &amp; a_{13}\\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{vmatrix}
+\end{split}\]</div>
+</section>
+</section>
+<section id="id6">
+<h2>逆行列<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(A^{-1} \cdot A = E\)</span>を満たす<span class="math notranslate nohighlight">\(A^{-1}\)</span>を<span class="math notranslate nohighlight">\(A\)</span>の逆行列という。</p>
+<p>ただし、行列式<span class="math notranslate nohighlight">\(|A|=0\)</span>の時は<span class="math notranslate nohighlight">\(A\)</span>は逆行列を持たない。</p>
+<section id="id7">
+<h3>求め方<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<section id="id8">
+<h4>2x2行列の逆行列<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<p>2x2の行列<span class="math notranslate nohighlight">\(A=\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}\)</span>の逆行列は
+$<span class="math notranslate nohighlight">\(
+A^{-1} = \frac{1}{ad-bc}
+\begin{pmatrix}
+d&amp;-b\\
+-c&amp;a
+\end{pmatrix}
+\)</span>$</p>
+</section>
+<section id="id9">
+<h4>掃き出し法<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="numpy">
+<h4>numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">LA</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">LA</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="c1">#=&gt;array([[ 0.125 ,  0.3125],</span>
+<span class="c1">#       [ 0.125 , -0.1875]])</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="id10">
+<h2>固有値・固有値ベクトル<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<p>あるn次正方行列<span class="math notranslate nohighlight">\(A\)</span>に対し、</p>
+<div class="math notranslate nohighlight">
+\[Ax = \lambda x\]</div>
+<p>を満たすn次元ベクトル<span class="math notranslate nohighlight">\(x (x \neq 0)\)</span>が存在する時、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lambda : Aの固有値\\
+x : \lambdaに対する固有ベクトル
+\end{split}\]</div>
+<p>と言う</p>
+<section id="id11">
+<h3>求め方<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<section id="id12">
+<h4>固有値<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Ax = \lambda xを満たすx,\lambdaを求める\\
+単位ベクトルEを使い変形すると\\
+(A-\lambda E)=0\\
+すなわち\\
+|A-\lambda E|=0\\
+を考える
+\end{split}\]</div>
+</section>
+<section id="id13">
+<h4>固有ベクトル<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lambda = \lambda_1, \lambda_2, \dots を代入して、\\
+(A-\lambda_i E)x=0\\
+を満たすx_iを求める。
+\end{split}\]</div>
+<p>例：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}3&amp;2&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;1\end{pmatrix}の固有値、固有ベクトルは？
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}3-\lambda &amp; 2 &amp; 0\\
+0 &amp; 2 - \lambda &amp; 0\\
+0 &amp; 0 &amp; 1-\lambda
+\end{pmatrix}=0
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+(3-\lambda)(2-\lambda)(1-\lambda)=0\\
+\therefore \lambda=3,2,1
+\end{split}\]</div>
+<p>固有ベクトルは、</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda=1\)</span>の時</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+(A-\lambda_1 E)x=0\\
+\begin{pmatrix}
+3-1 &amp; 2 &amp; 0\\
+0 &amp; 2-1 &amp; 0\\
+0 &amp; 0 &amp; 1-1
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3
+\end{pmatrix}
+=0\\\end{split}\\\begin{split}\begin{cases}
+2x_1+2x_2=0	\therefore x_1=-x_2\\
+x_2=0	\therefore x_2=0\\
+0=0\\
+\end{cases}\\
+\therefore \lambda=1の時、固有値は
+\begin{pmatrix}
+0\\0\\1
+\end{pmatrix}
+の定数倍
+\end{split}\end{aligned}\end{align} \]</div>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda=2\)</span>の時</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+(A- 2 E)x=0\\
+\begin{pmatrix}
+3-2 &amp; 2 &amp; 0\\
+0 &amp; 2-2 &amp; 0\\
+0 &amp; 0 &amp; 1-2
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3
+\end{pmatrix}
+=0\\\end{split}\\\begin{split}\begin{cases}
+x_1+2x_2=0	\therefore x_1=-2x_2\\
+0=0\\
+-x_3=0 	\therefore x_3=0\\
+\end{cases}\\
+任意の定数Sを用いると\\\end{split}\\\begin{split}\begin{pmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+-2S\\
+S\\
+0\\
+\end{pmatrix}
+=S
+\begin{pmatrix}
+-2\\
+1\\
+0\\
+\end{pmatrix}
+\\\end{split}\\\begin{split}\therefore \lambda=2の時、固有値は
+\begin{pmatrix}
+-2\\1\\0
+\end{pmatrix}
+の定数倍
+\end{split}\end{aligned}\end{align} \]</div>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda=3\)</span>の時</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+(A- 3E)x=0\\
+\begin{pmatrix}
+3-3 &amp; 2 &amp; 0\\
+0 &amp; 2-3 &amp; 0\\
+0 &amp; 0 &amp; 1-3
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3
+\end{pmatrix}
+=0\\\end{split}\\\begin{split}\begin{cases}
+2x_2=0	\therefore x_2=0\\
+-x_2=0\\
+-2x_3=0 	\therefore x_3=0\\
+\end{cases}\\\end{split}\\\begin{split}\therefore \lambda=3の時、固有値は
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+の定数倍
+\end{split}\end{aligned}\end{align} \]</div>
+</section>
+</section>
+<section id="id14">
+<h3>numpy<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">LA</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+	<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+<span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="c1"># 固有値</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="c1">#array([3., 2., 1.])</span>
+<span class="c1"># 固有ベクトル; 縦に見る</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="c1">#array([[ 1.        , -0.89442719,  0.        ],</span>
+<span class="c1">#       [ 0.        ,  0.4472136 ,  0.        ],</span>
+<span class="c1">#       [ 0.        ,  0.        ,  1.        ]])</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id15">
+<h2>固有値分解<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+<p>正方行列<span class="math notranslate nohighlight">\(A\)</span>を、</p>
+<ul class="simple">
+<li><p>固有値を対角線上に並べた固有値行列<span class="math notranslate nohighlight">\(\Lambda\)</span>と</p></li>
+<li><p>固有ベクトルを並べた行列<span class="math notranslate nohighlight">\(V\)</span>
+を使ってこのように表すこと</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[A=V \Lambda V^{-1}\]</div>
+<section id="id16">
+<h3>求め方<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<section id="id17">
+<h4>numpy<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">LA</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+	<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+<span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># 固有値</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="c1">#array([3., 2., 1.])</span>
+
+<span class="c1"># 固有値ベクトル</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+<span class="c1">#array([[3., 0., 0.],</span>
+<span class="c1">#       [0., 2., 0.],</span>
+<span class="c1">#       [0., 0., 1.]])</span>
+
+<span class="c1"># 固有ベクトル</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="c1">#array([[ 1.        , -0.89442719,  0.        ],</span>
+<span class="c1">#       [ 0.        ,  0.4472136 ,  0.        ],</span>
+<span class="c1">#       [ 0.        ,  0.        ,  1.        ]])</span>
+
+<span class="c1"># 固有ベクトル（右）</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="c1"># 逆行列を得る</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+<span class="c1">#array([[1.        , 2.        , 0.        ],</span>
+<span class="c1">#       [0.        , 2.23606798, 0.        ],</span>
+<span class="c1">#       [0.        , 0.        , 1.        ]])</span>
+</pre></div>
+</div>
+<p>numpyで得らた結果を使ってAを固有値分解すると、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=vQR=
+\begin{pmatrix}
+1 &amp; -2 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+3 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+1 &amp; 2 &amp; 0\\
+0 &amp; \sqrt{5} &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+</section>
+</section>
+<section id="id18">
+<h2>対角化<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
+<p>正方行列<span class="math notranslate nohighlight">\(A\)</span>を、</p>
+<ul class="simple">
+<li><p>固有値を対角線上に並べた固有値行列<span class="math notranslate nohighlight">\(\Lambda\)</span>と</p></li>
+<li><p>固有ベクトルを並べた行列<span class="math notranslate nohighlight">\(V\)</span>
+を使ってこのように変形すること</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\Lambda = V^{-1}AV\]</div>
+<section id="id19">
+<h3>対角化のメリット<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>計算が楽になる</p></li>
+</ul>
+</section>
+<section id="id20">
+<h3>対角化可能<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<p>次数と同じ数の固有ベクトルが互いに一次独立</p>
+</section>
+<section id="id21">
+<h3>例<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(X=\begin{pmatrix}3&amp;1\\2&amp;2\end{pmatrix}\)</span>のn乗は？</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">LA</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+	<span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+	<span class="p">])</span>
+<span class="n">w</span><span class="p">,</span><span class="n">v</span><span class="o">=</span><span class="n">LA</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4., 1.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aを対角化した物がD</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="n">D</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4., 0.],
+       [0., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.70710678, -0.4472136 ],
+       [ 0.70710678,  0.89442719]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>vの整数倍であれば問題ない。計算しやすいように、縦の要素毎にきりの良い数字に変換する</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V=\begin{pmatrix}
+1 &amp; 1\\
+1 &amp; -2
+\end{pmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 整数化したv</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span>
+	<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">]])</span>
+
+<span class="c1"># 逆行列を求めるコマンド</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="n">V1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[ 0.66666667,  0.33333333],
+        [ 0.33333333, -0.33333333]]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(V^{-1}\)</span>の変換は行列全体に対して係数を掛ける方法っぽい</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V^{-1}=
+\dfrac{1}{3}
+\begin{pmatrix}
+2 &amp; 1\\
+1 &amp; -1
+\end{pmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 検算</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+	<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+	<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="n">V</span> <span class="o">@</span> <span class="n">D</span> <span class="o">@</span> <span class="n">V1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[3., 1.],
+        [2., 2.]]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=V \Lambda V^{-1}\\
+=
+\frac{1}{3}
+\begin{pmatrix}
+1&amp;1\\
+1&amp;-2
+\end{pmatrix}
+\begin{pmatrix}
+4&amp;0\\
+0&amp;1
+\end{pmatrix}
+\begin{pmatrix}
+2&amp;1\\
+1&amp;-1
+\end{pmatrix}
+\\
+A^n =V \Lambda^n V^{-1}\\
+=
+\frac{1}{3}
+\begin{pmatrix}
+1&amp;1\\
+1&amp;-2
+\end{pmatrix}
+\begin{pmatrix}
+4&amp;0\\
+0&amp;1
+\end{pmatrix}^n
+\begin{pmatrix}
+2&amp;1\\
+1&amp;-1
+\end{pmatrix}\\
+=
+\frac{1}{3}
+\begin{pmatrix}
+1&amp;1\\
+1&amp;-2
+\end{pmatrix}
+\begin{pmatrix}
+4^n&amp;0\\
+0&amp;1^n
+\end{pmatrix}
+\begin{pmatrix}
+2&amp;1\\
+1&amp;-1
+\end{pmatrix}\\
+=\frac{1}{3}
+\begin{pmatrix}
+4^n	 &amp; 1\\
+4^n &amp; -2
+\end{pmatrix}
+\begin{pmatrix}
+2&amp;1\\
+1&amp;-1
+\end{pmatrix}\\
+=\frac{1}{3}
+\begin{pmatrix}
+2*4^n+1 &amp; 4^n-1\\
+2*4^n-2 &amp; 4^n+2
+\end{pmatrix}\end{split}\]</div>
+</section>
+</section>
+<section id="id22">
+<h2>特異値分解<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h2>
+<dl class="simple myst">
+<dt>Singular Value Decomposition SVD</dt><dd><p>次元削減のために用いられる手法
+= 長方形行列の固有値分解</p>
+</dd>
+</dl>
+<section id="id23">
+<h3>手順<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
+<p>任意の行列<span class="math notranslate nohighlight">\(A\)</span>を<span class="math notranslate nohighlight">\(A=USV^T\)</span>に特異値分解してみる</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix}
+1&amp;2&amp;3\\
+3&amp;2&amp;1
+\end{pmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># linalgモジュールはLAとしてimportする</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">LA</span>
+
+<span class="c1"># 行列Aを定義する</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># AA^Tを求める</span>
+<span class="n">AAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">AAT</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[14, 10],
+       [10, 14]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 特異値分解のコマンド</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># 左特異値行列</span>
+<span class="n">U</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.70710678, -0.70710678],
+       [-0.70710678,  0.70710678]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 特異値</span>
+<span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.89897949, 2.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 対角行列にする</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.89897949, 0.        ],
+       [0.        , 2.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 左特異値行列の転地</span>
+<span class="n">Vt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-5.77350269e-01, -5.77350269e-01, -5.77350269e-01],
+       [ 7.07106781e-01,  1.65486686e-16, -7.07106781e-01],
+       [ 4.08248290e-01, -8.16496581e-01,  4.08248290e-01]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># shapeをそろえる</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">S2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.89897949, 0.        , 0.        ],
+       [0.        , 2.        , 0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 検算</span>
+<span class="n">U</span> <span class="o">@</span> <span class="n">S2</span> <span class="o">@</span> <span class="n">Vt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 2., 3.],
+       [3., 2., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>よって、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} U =  \begin{pmatrix}
+- \dfrac{1}{\sqrt{2}} &amp;
+- \dfrac{1}{\sqrt{2}}\\
+- \dfrac{1}{\sqrt{2}} &amp;
+\dfrac{1}{\sqrt{2}}
+\end{pmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+S=\begin{pmatrix}
+2\sqrt{6} &amp; 0 &amp;0\\
+0 &amp; 2 &amp; 0
+\end{pmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} V^T =  \begin{pmatrix}
+\dfrac{1}{\sqrt{3}} &amp;
+\dfrac{1}{\sqrt{3}} &amp;
+\dfrac{1}{\sqrt{3}} \\
+- \dfrac{1}{\sqrt{2}} &amp;
+0 &amp;
+\dfrac{1}{\sqrt{2}}\\
+\dfrac{1}{\sqrt{6}} &amp;
+-\dfrac{2}{\sqrt{6}} &amp;
+\dfrac{1}{\sqrt{6}} &amp;
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./math"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="log.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">指数・対数</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="optimization.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">最適化アルゴリズム</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By nabepyon<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

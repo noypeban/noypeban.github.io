@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>条件付き確率 &#8212; noypeban.github.io</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="分布" href="distribution.html" />
+    <link rel="prev" title="ベイズの定理" href="beyes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">noypeban.github.io</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to my scrap book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="beyes.html">
+   ベイズの定理
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   条件付き確率
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   分布
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="information_theory.html">
+   情報理論
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="log.html">
+   指数・対数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix.html">
+   行列
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimization.html">
+   最適化アルゴリズム
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  アルゴリズム
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithm/kmeans.html">
+   k-means
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithm/kmeans%2B%2B.html">
+   k-means++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithm/svm.html">
+   SVM
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  sample code
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../samplecode/preprocess.html">
+   label encoding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../samplecode/regression.html">
+   Regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  other
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../other/jupyter-book.html">
+   jupyter-bookの使い方
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../other/latex.html">
+   Latexの覚書
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../other/vscode.html">
+   vscode関係
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/noypeban/noypeban.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/noypeban/noypeban.github.io/issues/new?title=Issue%20on%20page%20%2Fmath/cond_prob.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/math/cond_prob.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   定義
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   例題
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     サイコロ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     男の子、女の子
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     検査と感染
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     １と書かれた赤玉
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     サイコロの出目の和
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     カード戻さず
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     玉戻さず
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     2回のサイコロの出目の差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     2018センター試験 - 大小のサイコロ
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>条件付き確率</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   定義
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   例題
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     サイコロ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     男の子、女の子
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     検査と感染
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     １と書かれた赤玉
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     サイコロの出目の和
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     カード戻さず
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     玉戻さず
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     2回のサイコロの出目の差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     2018センター試験 - 大小のサイコロ
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>条件付き確率<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>定義<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<dl class="simple myst">
+<dt>条件付き確率</dt><dd><p>「事象 <span class="math notranslate nohighlight">\(A\)</span> が起きた」と分かったもとでの事象 <span class="math notranslate nohighlight">\(B\)</span> が起こる確率</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(B|A) = \dfrac{P(A \cap B)}{P(A)}\\
+P(A|B) = \dfrac{P(A \cap B)}{P(B)}
+\end{split}\]</div>
+<p>変形すると、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(A\cap B)=\\
+P(A)\times P(B|A) = P(B) \times P(A|B)
+\end{split}\]</div>
+<p>事象の数をベースに、このように表現することもできる</p>
+<div class="math notranslate nohighlight">
+\[
+P(B|A) = \dfrac{|A\cap B|}{|A|}
+\]</div>
+</section>
+<section id="id3">
+<h2>例題<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id4">
+<h3>サイコロ<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>サイコロを1つ振った。出目を見逃してしまったが，友人が出目は偶数だと教えてくれた。このとき出目が 4 以上であった確率を求めよ。
+–<a class="reference external" href="https://manabitimes.jp/math/1061">高校数学の美しい物語</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>事象A: 4以上が出た</p></li>
+<li><p>事象B: 偶数が出た</p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(A|B) = \dfrac{P(A\cap B)}{P(B)}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(B) = (偶数が出る確率)\\
+\dfrac{3}{6}\\
+P(A\cap B) = (4以上の偶数が出る確率)\\
+= \dfrac{2}{6}\\
+P(A|B) = (偶数が出た上で4以上が出る確率）\\
+= \dfrac{P(A\cap B)}{P(A)}\\
+=\dfrac{\dfrac{2}{6}}{\dfrac{3}{6}}
+=\dfrac{2}{3}
+\end{split}\]</div>
+<p>事象の数ベースで考えても、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(A|B) = \dfrac{|A\cap B|}{|A|}\\
+=\dfrac{2}{3}
+\end{split}\]</div>
+</section>
+<section id="id5">
+<h3>男の子、女の子<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>ある夫婦には子供が二人いる。二人のうち少なくとも一人は男の子ということが分かった。このとき，二人とも男の子である確率を求めよ。ただし，男の子が生まれる確率，女の子が生まれる確率はともに <span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span> とする
+–<a class="reference external" href="https://manabitimes.jp/math/1061">高校数学の美しい物語</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>事象A: 二人とも男の子</p></li>
+<li><p>事象B: 一人が男の子</p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(A|B) = \dfrac{P(A\cap B)}{P(B)}\)</span></p></li>
+<li><p>子供の組み合わせ: 男男,男女,女男,女女</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(B) = (一人が男の子の確率)\\
+= \dfrac{3}{4}\\
+P(A\cap B) = (一人が男の子かつ二人が男の子の確率)\\
+= \dfrac{1}{4}\\
+P(A|B) = \dfrac{P(A\cap B)}{P(B)}\\
+= \dfrac{\dfrac{1}{4}}{\dfrac{3}{4}}\\
+=\dfrac{1}{3}
+\end{split}\]</div>
+</section>
+<section id="id6">
+<h3>検査と感染<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>とある病気にかかっているか判定する検査について考える。この病気は 10 万人に一人が罹患している。「病気なのに陰性と判定してしまう確率」「病気でないのに陽性と判定してしまう確率」はともに 0.01 であるとする。太郎さんが陽性と判定されたとき，本当に病気にかかっている確率を求めよ。
+–<a class="reference external" href="https://manabitimes.jp/math/1061">高校数学の美しい物語</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>事象A: 感染している</p></li>
+<li><p>事象B: 検査で陽性</p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(A|B) = \dfrac{P(A\cap B)}{P(B)}\)</span></p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>-</p></th>
+<th class="head"><p>感染</p></th>
+<th class="head"><p>してない</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>陽性</p></td>
+<td><p>0.99</p></td>
+<td><p>0.01</p></td>
+</tr>
+<tr class="row-odd"><td><p>陰性</p></td>
+<td><p>0.01</p></td>
+<td><p>0.99</p></td>
+</tr>
+</tbody>
+</table>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+P(B|A) = (感染した上で陽性の確率)\\
+= 0.99\\\end{split}\\\begin{split}P(B) = (検査で陽性の確率)\\
+= (感染かつ陽性) + (非感染かつ陽性)\\
+= 0.00001 * 0.99 + 0.99999 * 0.01\\
+=0.0000099+0.0099999\\
+=0.0100098\\
+P(A\cap B) = P(A)\times P(B|A)\\
+=0.00001 \times 0.99\\
+=0.0000099\\
+P(A|B) = \dfrac{P(A\cap B)}{P(B)}\\
+=0.0000099 \div 0.0100098\\
+= 9.890307498651322e-4\\
+\fallingdotseq 0.001
+\end{split}\end{aligned}\end{align} \]</div>
+</section>
+<section id="id7">
+<h3>１と書かれた赤玉<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>次の図の袋の中には、赤い玉が3つ、白い玉が3つ入っています。赤い玉のうち2つには「1」、残りの1つには「2」と書かれています。一方、白い玉のうち2つには「2」、残りの1つには「1」と書かれています。この袋の中から玉を1つ取り出す時、「1」と書かれた赤色の玉が取り出される確率はいくらでしょうか。
+– <a class="reference external" href="https://bellcurve.jp/statistics/course/6438.html">統計web</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>事象A: １と書かれている</p></li>
+<li><p>事象B: 赤玉</p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(A\cap B)\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ P(A \cap B) = \dfrac{2}{6} = \dfrac{1}{3}\]</div>
+<blockquote>
+<div><p>例題1と同じ袋の中から玉を1つ取り出した時、その玉は赤色でした。この赤い玉に「1」と書かれている確率はいくらでしょうか。
+– <a class="reference external" href="https://bellcurve.jp/statistics/course/6438.html">統計web</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>事象A: １と書かれている</p></li>
+<li><p>事象B: 赤玉</p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(A|B) = \dfrac{P(A\cap B)}{P(B)}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(B) = \dfrac{3}{6}\\
+P(A \cap B) = \dfrac{2}{6}\\
+\therefore P(A|B) = \dfrac{P(A \cap B)}{P(B)}\\
+= \dfrac{2}{3}
+\end{split}\]</div>
+</section>
+<section id="id8">
+<h3>サイコロの出目の和<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>さいころを2回投げて出た目の和が8以上となる確率はいくらでしょうか。ただし、1回目に出た目は「4」であることが分かっています
+– <a class="reference external" href="https://bellcurve.jp/statistics/course/6438.html">統計web</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>事象A: 和が8以上</p></li>
+<li><p>事象B: 4が出る</p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(A|B)=\dfrac{P(A\cap B)}{P(B)}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(B) = P(4が出る確率)\\
+= \dfrac{1}{6}\\
+P(A \cap B) = P(4が出てかつ、2回目に4以上が出る確率)\\
+= \dfrac{1}{6} \times \dfrac{3}{6}\\
+\therefore P(A|B) = \dfrac{P(A \cap B)}{P(B)}\\
+= \dfrac{\dfrac{1}{6}\times \dfrac{3}{6}}{\dfrac{1}{6}}\\
+= \dfrac{3}{6} = \dfrac{1}{2}
+\end{split}\]</div>
+</section>
+<section id="id9">
+<h3>カード戻さず<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>1 から 13 までの番号が書いてあるカードが 13 枚
+入っている箱から，カードを 1 枚取り出し，それ
+を戻さずに，続けてもう 1 枚取り出します。1 回目
+に偶数が出たとき， 2 回目は奇数がでる確率を求
+めなよ。
+– <a class="reference external" href="https://iidrill.com/material/4%E8%AC%9B%E3%80%80%E6%9D%A1%E4%BB%B6%E4%BB%98%E3%81%8D%E7%A2%BA%E7%8E%87%EF%BC%882%E7%AF%80%E3%80%80%E7%A2%BA%E7%8E%87%EF%BC%89%E3%80%80%E5%95%8F%E9%A1%8C%E9%9B%86%E3%80%90%E9%AB%98%E6%A0%A1%E6%95%B0/">iドリル</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>条件A: 1回目に偶数が出る</p></li>
+<li><p>条件B: 2回目に奇数が出る</p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(B|A)=\dfrac{P(A \cap B)}{P(A)}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(A) = \dfrac{6}{13}\\
+P(A \cap B) = P(A) \times \dfrac{7}{12}\\
+P(B|A) = \dfrac{P(A) \times \dfrac{7}{12}}{P(A)}\\
+= \dfrac{7}{12}
+\end{split}\]</div>
+</section>
+<section id="id10">
+<h3>玉戻さず<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>赤玉 5 個と白玉 3 個の入った袋から，玉を 1 個ずつ
+2 個取り出す。ただし，取り出した玉はもとにもどさ
+ない。1 個目に赤玉が出たときに，2 個目も赤玉が出
+る確率を求めよ。
+– <a class="reference external" href="https://iidrill.com/material/4%E8%AC%9B%E3%80%80%E6%9D%A1%E4%BB%B6%E4%BB%98%E3%81%8D%E7%A2%BA%E7%8E%87%EF%BC%882%E7%AF%80%E3%80%80%E7%A2%BA%E7%8E%87%EF%BC%89%E3%80%80%E5%95%8F%E9%A1%8C%E9%9B%86%E3%80%90%E9%AB%98%E6%A0%A1%E6%95%B0/">iドリル</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>事象A: 1回目に赤玉がでる</p></li>
+<li><p>事象B: 2回目に赤玉がでる</p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(B|A) = \dfrac{P(A \cap B)}{P(A)}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(A) = \dfrac{5}{8}\\
+P(A \cap B) = P(A) \times \dfrac{4}{7}\\
+P(B|A) = \dfrac{4}{7}
+\end{split}\]</div>
+</section>
+<section id="id11">
+<h3>2回のサイコロの出目の差<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>1つのサイコロを続けて2回振ったときに，1回目の出る目をa，2回目に出る目をbとする．</p>
+<p>(i). 事象<span class="math notranslate nohighlight">\(|a-b|&lt;5\)</span>の起こる確率は？</p>
+<p>(ii). 事象<span class="math notranslate nohighlight">\(a &lt; 5\)</span>が起こった時に、事象<span class="math notranslate nohighlight">\(|a-b|&lt;5\)</span>の起こる確率は？
+<a class="reference external" href="https://www.geisya.or.jp/~mwm48961/koukou/cond_prob.htm">https://www.geisya.or.jp/~mwm48961/koukou/cond_prob.htm</a></p>
+</div></blockquote>
+<p>(i) 事象<span class="math notranslate nohighlight">\(|a-b| \geq 5\)</span>となるケースを数え上げると、</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>1回目</p></th>
+<th class="head"><p>2回目</p></th>
+<th class="head"><p>abs(a-b)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>6</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+<p>の2通り。</p>
+<p>全事象<span class="math notranslate nohighlight">\(U\)</span>は<span class="math notranslate nohighlight">\(6\times 6=36\)</span>通りなので、
+事象<span class="math notranslate nohighlight">\(|a-b|&lt;5\)</span>の起こる確率は</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P = \dfrac{36-2}{36} = \dfrac{34}{36}\\
+\dfrac{17}{18}
+\end{split}\]</div>
+<p>(ii)</p>
+<ul class="simple">
+<li><p>事象A: <span class="math notranslate nohighlight">\(a&lt;5\)</span></p></li>
+<li><p>事象B: <span class="math notranslate nohighlight">\(|a-b|&lt;5\)</span></p></li>
+<li><p>求める確率: <span class="math notranslate nohighlight">\(P(B|A) = \dfrac{P(A \cap B)}{P(A)}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(A) = \dfrac{4}{6}\\
+P(A \cap B) = P(aが5未満、かつbとaの差が5未満)\\
+\end{split}\]</div>
+<p>事象Bのうち、a&gt;=5のケースは</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>1回目</p></th>
+<th class="head"><p>2回目</p></th>
+<th class="head"><p>計(通り)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>1~6</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>2~6</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+<p>なので</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+P(A \cap B) = \dfrac{34-11}{36}=\dfrac{23}{36}\\\end{split}\\\begin{split}\therefore P(B|A) = \dfrac{P(A \cap B)}{P(A)}\\
+= \dfrac{\dfrac{23}{36}}{\dfrac{4}{6}}\\
+= \dfrac{23}{36} \times \dfrac{6}{4}\\
+= \dfrac{23}{6} \times \dfrac{1}{4}\\
+= \dfrac{23}{24}
+\end{split}\end{aligned}\end{align} \]</div>
+</section>
+<section id="id12">
+<h3>2018センター試験 - 大小のサイコロ<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>大小のサイコロを同時に投げる試行において、</p>
+<ul class="simple">
+<li><p>事象A: 大きいサイコロで4が出る</p></li>
+<li><p>事象B: 2個のサイコロの出目の和が7</p></li>
+<li><p>事象C: 2個のサイコロの出目の和が9</p></li>
+</ul>
+<ol class="simple">
+<li><p>A,B,Cの確率は？</p></li>
+<li><p>それぞれの確率は？</p></li>
+</ol>
+<ul class="simple">
+<li><p>Cが起きた時のAが起こる条件付確率と、</p></li>
+<li><p>Aが起きた時のCが起こる条件付き確率は？</p></li>
+</ul>
+<ol class="simple">
+<li><p>不等号は？</p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A \cap B)\)</span> vs <span class="math notranslate nohighlight">\(P(A)P(B)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A \cap C)\)</span> vs <span class="math notranslate nohighlight">\(P(A)P(C)\)</span></p></li>
+</ul>
+<ol class="simple">
+<li><p>大小2個のサイコロを同時に投げる試行を2回繰り返す。</p></li>
+</ol>
+<ul class="simple">
+<li><p>1回目に事象<span class="math notranslate nohighlight">\(A\cap B\)</span>が起こり、2回目に<span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span>が起こる確率</p></li>
+<li><p>3つの事象<span class="math notranslate nohighlight">\(A, B, C\)</span>がそれぞれちょうど1回ずつ起こる確率
+– <a class="reference external" href="https://www.toshin.com/center/2018/sugaku-1a_mondai_3.html">東進</a></p></li>
+</ul>
+</div></blockquote>
+<ol>
+<li><p>事象<span class="math notranslate nohighlight">\(A\)</span>においては大小のサイコロは独立事象なので、</p>
+<div class="math notranslate nohighlight">
+\[
+	P(A) = \dfrac{1}{6}
+	\]</div>
+<p>事象<span class="math notranslate nohighlight">\(B\)</span>のケースは{1,6},{2,5},{3,4},{4,3},{5,2},{6,1}の6通り。全事象は36通りなので、</p>
+<div class="math notranslate nohighlight">
+\[
+	P(B) = \dfrac{|B|}{|U|} = \dfrac{1}{6}
+	\]</div>
+<p>事象<span class="math notranslate nohighlight">\(C\)</span>のケースは{3,6},{4,5},{5,4},{6,3}の4通りなので、</p>
+<div class="math notranslate nohighlight">
+\[
+	P(C) = \dfrac{|C|}{|U|} = \dfrac{4}{36}
+	= \dfrac{1}{9}
+	\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(A|C)\)</span>と<span class="math notranslate nohighlight">\(P(C|A)\)</span>を求める。事象<span class="math notranslate nohighlight">\(A \cap C\)</span>は{4, 5}の1通りしかない。</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+	P(A) = \dfrac{1}{6}\\
+	P(C) = \dfrac{1}{9}\\
+	P(A \cap C) = \dfrac{1}{36}\\\end{split}\\\begin{split}	P(A|C) = \dfrac{P(A \cap C)}{P(C)}\\
+	= \dfrac{1}{36} \times \dfrac{9}{1}\\
+	= \dfrac{1}{4}\\\end{split}\\\begin{split}	P(C|A) = \dfrac{P(A \cap C)}{P(A)}\\
+	= \dfrac{1}{36} \times \dfrac{6}{1}\\
+	= \dfrac{1}{6}
+	\end{split}\end{aligned}\end{align} \]</div>
+</li>
+<li><p>事象<span class="math notranslate nohighlight">\(A \cap B\)</span>は{4, 3}の1通りなので、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	P(A \cap B) = \dfrac{1}{36}\\
+	P(A)P(B) = \dfrac{1}{6} \cdot \dfrac{1}{6}\\
+	\dfrac{1}{36} == \dfrac{1}{36}\\
+	\therefore
+	P(A \cap B) == P(A)P(B)
+	\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(P(A \cap C)\)</span>は問２で求めたので、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	P(A \cap C) = \dfrac{1}{4}\\
+	P(A)P(C) = \dfrac{1}{6} \cdot \dfrac{1}{9}\\
+	= \dfrac{1}{54}\\
+	\dfrac{1}{4} &gt; \dfrac{1}{54}\\
+	\therefore
+	P(A \cap C) &gt; P(A)P(C)
+	\end{split}\]</div>
+</li>
+<li><p>1回目に事象<span class="math notranslate nohighlight">\(A\cap B\)</span>が起こり、2回目に<span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span>が起こる確率は、1回目が2回目に影響を与えない独立事象なので、それぞれの確率を掛け算すればよい。</p>
+<p>事象<span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span>は「大きいサイコロで4以外が出る」かつ「2個のサイコロの出目の合計が９」になる。</p>
+<p>ケースとしては、</p>
+<ul class="simple">
+<li><p>{3, 6}</p></li>
+<li><p>{5, 4}</p></li>
+<li><p>{6, 3}
+の3通り</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	P(\overline{A} \cap C) = \dfrac{3}{36}\\
+	P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
+	= \dfrac{1}{36} \cdot \dfrac{3}{36}\\
+	= \dfrac{1}{432}
+	\end{split}\]</div>
+<p>事象<span class="math notranslate nohighlight">\(A, B, C\)</span>がそれぞれ1回ずつ起こる確率は、</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>1回目</p></th>
+<th class="head"><p>2回目</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(A \cap B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(A \cap C\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\overline{A} \cap B\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\overline{A} \cap B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A \cap C\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A \cap B\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>の4パターン考えられる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	P(A \cap B) = \dfrac{1}{36}\\
+	P(A \cap C) = \dfrac{1}{36}\\
+	P(\overline{A} \cap C) = \dfrac{1}{12}\\
+	\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\overline{A} \cap B\)</span>のケースは、</p>
+<ul class="simple">
+<li><p>{1, 6}</p></li>
+<li><p>{2, 5}</p></li>
+<li><p>{3, 4}</p></li>
+<li><p>{5, 2}</p></li>
+<li><p>{6, 1}</p></li>
+</ul>
+<p>の５通りなので、<span class="math notranslate nohighlight">\(P(\overline{A} \cap B) = \dfrac{5}{36}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
+	+ P(A \cap C) \cdot P(\overline{A} \cap B)\\
+	+ P(B) \cdot P(A \cap C)\\
+	+ P(C) \cdot P(A \cap B)\\
+	= 2 \times \dfrac{1}{36} \cdot \dfrac{1}{12}\\
+	+ 2 \times \dfrac{1}{36} \cdot \dfrac{5}{36}\\
+	= \dfrac{1}{18}(\dfrac{3}{36}+\dfrac{5}{36})\\
+	= \dfrac{1}{18} \cdot \dfrac{8}{36}\\
+	= \dfrac{1}{9} \cdot \dfrac{1}{9}\
+	= \dfrac{1}{81}
+	\end{split}\]</div>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./math"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="beyes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">ベイズの定理</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="distribution.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">分布</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By nabepyon<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
