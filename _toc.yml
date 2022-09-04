@@ -10,6 +10,9 @@ parts:
   - caption: アルゴリズム
     chapters:
     - glob: math/algorithm/*
+  - caption: レイヤー
+    chapters:
+    - glob: layer/*
   - caption: sample code
     chapters:
     - glob: samplecode/*
