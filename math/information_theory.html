@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../layer/conv.html">
-   畳み込み
+   Conv layer
   </a>
  </li>
 </ul>
@@ -410,14 +410,21 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id3">
    平均情報量
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     例題
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id5">
    交差エントロピー
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    結合エントロピー
   </a>
  </li>
@@ -427,9 +434,36 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id7">
    相互情報量
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   条件付きエントロピー
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     例題：野球の結果と機嫌
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     例題：天気
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     例題：サイコロ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     例題：トランプ
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -459,14 +493,21 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id3">
    平均情報量
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     例題
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id5">
    交差エントロピー
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    結合エントロピー
   </a>
  </li>
@@ -476,9 +517,36 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id7">
    相互情報量
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   条件付きエントロピー
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     例題：野球の結果と機嫌
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     例題：天気
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     例題：サイコロ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     例題：トランプ
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -524,6 +592,8 @@ I(A, B) = -\log(A, B)\\
 \[
 平均情報量 H = -\sum P(E) \log P(E)
 \]</div>
+<section id="id4">
+<h3>例題<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Q. こんなサイコロの情報量は？</p>
 <table class="colwidths-auto table">
 <thead>
@@ -550,13 +620,14 @@ I(A, B) = -\log(A, B)\\
 <p>４が出た時の自己情報量：<span class="math notranslate nohighlight">\(- \log_2 \dfrac{1}{10} = \log_2 10\)</span></p>
 <p>平均情報量：<span class="math notranslate nohighlight">\(H=-(0.5 \times \log_2 0.5 + 0.1 \times \log_2 0.1 \times 5) = -0.5\log_20.5-0.5\log_2 0.1\)</span></p>
 </section>
-<section id="id4">
-<h2>交差エントロピー<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id5">
+<h2>交差エントロピー<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>２つの確率分布がまったく同じ時に最小となる
 分類問題の損失関数で用いられる。</p>
 </section>
-<section id="id5">
-<h2>結合エントロピー<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="id6">
+<h2>結合エントロピー<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>離散型：<span class="math notranslate nohighlight">\(H(X,Y)=-\sum_{i=1}^{M_X}
 \sum_{j=1}^{M_Y}
 P(x_i, y_j) \log P(x_i, y_j)\)</span></p>
@@ -573,8 +644,8 @@ P(x_i, y_j) \log P(x_i, y_j)\)</span></p>
 D_{KL}(p||q)=\sum_x p(x) \log \dfrac{p(x)}{q(x)}
 \]</div>
 </section>
-<section id="id6">
-<h2>相互情報量<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h2>相互情報量<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>２つの情報が得られた事により、どれくらい不確実性が減ったかを示す量</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -589,6 +660,184 @@ I(X, Y) = H(X)-H(X|Y)\\
 <li><p><span class="math notranslate nohighlight">\(H(X|Y)\)</span>: <span class="math notranslate nohighlight">\(Y\)</span>がわかった上での<span class="math notranslate nohighlight">\(X\)</span>の条件付きエントロピ</p></li>
 <li><p><span class="math notranslate nohighlight">\(H(X, Y)\)</span>: <span class="math notranslate nohighlight">\(X, Y\)</span>の結合エントロピー</p></li>
 </ul>
+</section>
+<section id="id8">
+<h2>条件付きエントロピー<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H(X|Y) = - \sum_y p(y) \sum_x p(x|y) \log p(x|y)\\
+= - \sum_x \sum_y p(x, y) \log p(x|y)\\
+= -\sum_y p(y) H(X|Y=y)
+\end{split}\]</div>
+<section id="id9">
+<h3>例題：野球の結果と機嫌<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>カープの勝敗を伝える情報源<span class="math notranslate nohighlight">\(A\)</span>があったとします。
+100日間のカープの勝敗を記録した結果、60日は勝利、40日は負けていました。
+また、カープファンであるMくんのカープの試合があった翌日の機嫌を100日間集計した結果、機嫌がよい日が55日、機嫌が悪い日が45日ありました。
+<a class="reference external" href="https://www.momoyama-usagi.com/entry/info-entropy#2-3">https://www.momoyama-usagi.com/entry/info-entropy#2-3</a></p>
+</div></blockquote>
+<p>１００日間の集計結果はこうなっていたとする。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>B\A</p></th>
+<th class="head"><p>win</p></th>
+<th class="head"><p>lose</p></th>
+<th class="head"><p>計</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>good</p></td>
+<td><p>40</p></td>
+<td><p>15</p></td>
+<td><p>55</p></td>
+</tr>
+<tr class="row-odd"><td><p>bad</p></td>
+<td><p>20</p></td>
+<td><p>25</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-even"><td><p>計</p></td>
+<td><p>60</p></td>
+<td><p>40</p></td>
+<td><p>100</p></td>
+</tr>
+</tbody>
+</table>
+<p>ここから、「Mくんの機嫌がわかった場合の、カープの勝敗を表す条件付きエントロピー<span class="math notranslate nohighlight">\(H(A|B)\)</span>」を次の式
+$<span class="math notranslate nohighlight">\(
+H(A|B) = -\sum_b^B P(b) \sum_a^A p(a|b) \log p(a|b)
+\)</span>$
+を使って求めてみる。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(B\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(P(b)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(P(A_{win} \mid b)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(P(A_{lose} \mid b)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>good</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{55}{100}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{40}{55}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{15}{55}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>bad</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{45}{100}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{20}{45}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{25}{45}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="math notranslate nohighlight">
+\[
+H(A|B) = - \dfrac{55}{100} \left(
+    \dfrac{40}{55} \log \dfrac{40}{55} + 
+    \dfrac{15}{55} \log \dfrac{15}{55}
+\right)
+- \dfrac{45}{100} \left(
+    \dfrac{20}{45} \log \dfrac{20}{45} + 
+    \dfrac{25}{45} \log \dfrac{25}{45}
+\right)\]</div>
+</section>
+<section id="id10">
+<h3>例題：天気<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>東京の天気の確率<span class="math notranslate nohighlight">\(X\)</span>が晴れ1/2、曇り1/4、雨1/4とする。気温が25度以上になる確率<span class="math notranslate nohighlight">\(Y\)</span>が、晴れの場合3/4、曇りの場合1/2、雨の場合1/4だったとする。条件付きエントロピー<span class="math notranslate nohighlight">\(H(X|Y), H(Y|X)\)</span>を求めよ。
+<a class="reference external" href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10174127805">https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10174127805</a></p>
+</div></blockquote>
+<p><span class="math notranslate nohighlight">\(H(Y|X)\)</span>を求める</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(P(x)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(P(y_{25度以上} \mid x)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(P(y_{25度未満} \mid x)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>晴れ</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{3}{4}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{4}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>曇り</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{4}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>雨</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{4}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{4}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{3}{4}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+H(Y|X) = - \dfrac{1}{2} \left(
+    \dfrac{3}{4} \log \dfrac{3}{4} + 
+    \dfrac{1}{4} \log \dfrac{1}{4}
+\right) - \dfrac{1}{4} \left(
+    \dfrac{1}{2} \log \dfrac{1}{2} +
+    \dfrac{1}{2} \log \dfrac{1}{2}
+\right) - \dfrac{1}{4} \left(
+    \dfrac{1}{4} \log \dfrac{1}{4} +
+    \dfrac{3}{4} \log \dfrac{3}{4}
+\right)\\\end{split}\\\begin{split}= - \dfrac{1}{2} \left(
+    \dfrac{3}{4} \left( \log 3 - \log_2 4 \right)
+    - \dfrac{1}{4} \log_2 4
+\right) - \dfrac{1}{4} \left(
+    - \dfrac{1}{2} 
+    - \dfrac{1}{2}
+\right) - \dfrac{1}{4} \left(
+    - \dfrac{1}{4} \times 2 +
+    \dfrac{3}{4} \left(\log 3 - 2 \right)
+\right)\\\end{split}\\\begin{split}= - \dfrac{1}{2} \left(
+    \dfrac{3}{4} \log 3
+    - \dfrac{3}{4} \cdot 2 
+    - \dfrac{1}{4} \cdot 2
+\right) - \dfrac{1}{4} \left(
+    - 1
+\right) - \dfrac{1}{4} \left(
+    - \dfrac{1}{2}
+    + \dfrac{3}{4} \log 3
+    - \dfrac{3}{2}
+\right)\\\end{split}\\\begin{split}= - \dfrac{1}{2} \left(
+    \dfrac{3}{4} \log 3
+    -2
+\right) + \dfrac{1}{4} 
+- \dfrac{1}{4} \left(
+    - \dfrac{4}{2}
+    + \dfrac{3}{4} \log 3
+\right)\\\end{split}\\\begin{split}= -\dfrac{3}{8} \log 3
++ 1
++ \dfrac{1}{4} 
++ \dfrac{1}{2}
+- \dfrac{3}{16} \log 3\\\end{split}\\= - \dfrac{9}{16} \log 3 - \dfrac{7}{4}
+\end{aligned}\end{align} \]</div>
+</section>
+<section id="id11">
+<h3>例題：サイコロ<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://okwave.jp/qa/q8213934.html">https://okwave.jp/qa/q8213934.html</a></p>
+</section>
+<section id="id12">
+<h3>例題：トランプ<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>ジョーカーを除いた52枚のトランプから1枚カードを引くという確率事象系
+A
+を考える。</p>
+<p>(1)　事前に「次のカードはスペードである」と知っているときに得られる平均情報量<span class="math notranslate nohighlight">\(H(A|スペード)\)</span>を求めなさい。</p>
+<p>(2)　事前に「次のカードはキングである」と知っているときに得られる平均情報量<span class="math notranslate nohighlight">\(H(A|キング)\)</span>を求めなさい。
+– <a class="reference external" href="https://www.krrk0.com/conditional-entropy/">「なんとなくわかる」大学の数学・物理・情報</a></p>
+</div></blockquote>
+<p>$$
+条件付きエントロピーの公式\
+H(X|Y) = - \sum_y^Y p(y) \sum_x^X p(x|y) \log p(x|y)\
+より、\
+H(A|スペード) = -\sum_y</p>
+</section>
 </section>
 </section>
 
