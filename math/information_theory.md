@@ -102,9 +102,11 @@ bad|20|25|45
 計|60|40|100
 
 ここから、「Mくんの機嫌がわかった場合の、カープの勝敗を表す条件付きエントロピー$H(A|B)$」を次の式
+
 $$
 H(A|B) = -\sum_b^B P(b) \sum_a^A p(a|b) \log p(a|b)
 $$
+
 を使って求めてみる。
 
 $B$|$P(b)$|$P(A_{win} \mid b)$|$P(A_{lose} \mid b)$
@@ -190,8 +192,120 @@ H(Y|X) = - \dfrac{1}{2} \left(
 = - \dfrac{9}{16} \log 3 - \dfrac{7}{4}
 $$
 
+#### $H(X|Y)$を求める
+
+問題文に$P(Y|X)$はあるが$P(X|Y)$がないので求めていく。まず、$P(X \cap Y)$を求めて表にする。
+
+$$
+P(X \cap Y) = P(X) \times P(Y|X)\\
+より\\
+
+P(25度以上 \cap 晴れ) = P(X_{晴れ})\times P(X_{晴れ}|Y_{25度以上})\\
+\dfrac{1}{2} \times \dfrac{3}{4}=\dfrac{3}{8}
+$$
+
+よって、$P(X \cap Y)$の表を埋めると、
+
+天気\気温|25度以上|未満|計
+-|-|-|-
+晴れ|$\dfrac{3}{8}$|$\dfrac{1}{8}$|$\dfrac{1}{2}$
+曇り|$\dfrac{1}{8}$|$\dfrac{1}{8}$|$\dfrac{3}{8}$
+雨|$\dfrac{1}{16}$|$\dfrac{3}{16}$|$\dfrac{1}{4}$
+計|$\dfrac{9}{16}$|$\dfrac{7}{16}$|$1$
+
+ここから、$P(X|Y)=P(X \cap Y) \div P(Y)$を使って$P(x|y)$の表を作ると
+
+$Y$|$P(y)$|$P(晴れ \mid y)$|$P(曇り \mid y)$|$P(雨 \mid y)$
+-|-|-|-|-
+25℃以上|$\dfrac{9}{16}$|$\dfrac{3}{8}\div\dfrac{9}{16}=\dfrac{2}{3}$|$\dfrac{1}{8}\div\dfrac{9}{16}=\dfrac{2}{9}$|$\dfrac{1}{16}\div\dfrac{9}{16}=\dfrac{1}{9}$
+25℃未満|$\dfrac{7}{16}$|$\dfrac{1}{8}\div\dfrac{7}{16}=\dfrac{2}{7}$|$\dfrac{1}{8}\div\dfrac{7}{16}=\dfrac{2}{7}$|$\dfrac{3}{16}\div\dfrac{7}{16}=\dfrac{3}{7}$
+
+$$
+H(X|Y) = - \dfrac{9}{16} \left(
+    \dfrac{2}{3} \log \dfrac{2}{3}
+    + \dfrac{2}{9} \log \dfrac{2}{9}
+    + \dfrac{1}{9} \log \dfrac{1}{9}
+\right)
+- \dfrac{7}{16} \left(
+    \dfrac{2}{7} \log \dfrac{2}{7}
+    + \dfrac{2}{7} \log \dfrac{2}{7}
+    + \dfrac{3}{7} \log \dfrac{3}{7}
+\right)\\
+
+ = - \dfrac{9}{16} \left(
+    \dfrac{2}{3} (1- \log 3)
+    + \dfrac{2}{9} (1-\log 3^2)
+    - \dfrac{1}{9} \log 3^2
+\right)
+- \dfrac{7}{16} \left(
+    \dfrac{4}{7} (1 - \log 7)
+    + \dfrac{3}{7} (\log 3 - \log 7)
+\right)\\
+
+ = - \dfrac{9}{16} \left(
+    \dfrac{2}{3} - \dfrac{2}{3}\log 3
+    + \dfrac{2}{9} - \dfrac{4}{9} \log 3
+    - \dfrac{2}{9} \log 3
+\right)
+- \dfrac{7}{16} \left(
+    \dfrac{4}{7} - \dfrac{4}{7} \log 7
+    + \dfrac{3}{7} \log 3 - \dfrac{3}{7} \log 7
+\right)\\
+
+ = - \dfrac{9}{16} \left(
+    (- \dfrac{6}{9} - \dfrac{4}{9} - \dfrac{2}{9}) \log 3 
+    + \dfrac{6}{9}    
+    + \dfrac{2}{9}
+\right)
+- \dfrac{7}{16} \left(
+    \dfrac{4}{7} 
+    - \log 7 
+    + \dfrac{3}{7} \log 3
+\right)\\
+
+ = - \dfrac{9}{16} \left(
+    - \dfrac{12}{9}\log 3
+    + \dfrac{8}{9} 
+\right)
+- \dfrac{7}{16} \left(
+    \dfrac{4}{7} 
+    - \log 7 
+    + \dfrac{3}{7} \log 3
+\right)\\
+
+ =  \dfrac{12}{16}\log 3
+    - \dfrac{1}{2} 
+    - \dfrac{1}{4} 
+    + \dfrac{7}{16}\log 7 
+    - \dfrac{3}{16} \log 3
+\\
+
+ =  (\dfrac{12}{16}- \dfrac{3}{16})\log 3
+    + \dfrac{7}{16}\log 7 
+    - \dfrac{2}{4} 
+    - \dfrac{1}{4} 
+\\
+
+ =  \dfrac{9}{16} \log 3
+    + \dfrac{7}{16} \log 7 
+    - \dfrac{3}{4} 
+\\
+
+
+$$
+
 ### 例題：サイコロ
-https://okwave.jp/qa/q8213934.html
+
+> - 事象A:サイコロを振って出た目
+> - 事象B(b1,b2)
+>   - b1:サイコロの目は3の倍数
+>   - b2:サイコロの目は3の倍数以外
+> 
+>サイコロは普通のサイコロです。(1から6全て確率1/6)。
+>この時、サイコロの目が事前に3の倍数だと分かっている時の、AのエントロピーH(A|b1)を求めよ
+> -- https://okwave.jp/qa/q8213934.html
+
+B|P(b)
 
 ### 例題：トランプ
 
