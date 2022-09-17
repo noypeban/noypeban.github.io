@@ -87,7 +87,6 @@ $$
 その対数尤度関数は、
 
 $$
-\begin{split}
 L(x) &= \sum_{i=1}^n ln \dfrac{1}{\sqrt{2 \pi \sigma^2}}
 exp
 [-\dfrac{(x-\mu)^2}{2\sigma ^2}
@@ -119,8 +118,6 @@ exp
 -\dfrac{1}{2 \sigma^2}
 \sum_{i=1}^n
 (y_i - (\sum_{j=1}^k x_{ij} \beta_j + \beta_0))^2
-
-\end{split}
 $$
 
 ここで$\dfrac{n}{2} \ln (2 \pi \sigma^2)$は$\beta$に対して定数項なので、上記の対数尤度関数を最大化する$\beta$を求めることは
