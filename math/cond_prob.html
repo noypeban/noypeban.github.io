@@ -851,79 +851,73 @@ P(A \cap B) = \dfrac{34-11}{36}=\dfrac{23}{36}\\\end{split}\\\begin{split}\there
 </ul>
 <ol class="simple">
 <li><p>A,B,Cの確率は？</p></li>
-<li><p>それぞれの確率は？</p></li>
-</ol>
-<ul class="simple">
-<li><p>Cが起きた時のAが起こる条件付確率と、</p></li>
-<li><p>Aが起きた時のCが起こる条件付き確率は？</p></li>
-</ul>
-<ol class="simple">
-<li><p>不等号は？</p></li>
-</ol>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(P(A \cap B)\)</span> vs <span class="math notranslate nohighlight">\(P(A)P(B)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P(A \cap C)\)</span> vs <span class="math notranslate nohighlight">\(P(A)P(C)\)</span></p></li>
-</ul>
-<ol class="simple">
-<li><p>大小2個のサイコロを同時に投げる試行を2回繰り返す。</p></li>
-</ol>
-<ul class="simple">
-<li><p>1回目に事象<span class="math notranslate nohighlight">\(A\cap B\)</span>が起こり、2回目に<span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span>が起こる確率</p></li>
-<li><p>3つの事象<span class="math notranslate nohighlight">\(A, B, C\)</span>がそれぞれちょうど1回ずつ起こる確率
+<li><p>それぞれの確率は？<br />
+Cが起きた時のAが起こる条件付確率と、<br />
+Aが起きた時のCが起こる条件付き確率は？</p></li>
+<li><p>不等号は？<br />
+<span class="math notranslate nohighlight">\(P(A \cap B)\)</span> vs <span class="math notranslate nohighlight">\(P(A)P(B)\)</span><br />
+<span class="math notranslate nohighlight">\(P(A \cap C)\)</span> vs <span class="math notranslate nohighlight">\(P(A)P(C)\)</span></p></li>
+<li><p>大小2個のサイコロを同時に投げる試行を2回繰り返す。<br />
+1回目に事象<span class="math notranslate nohighlight">\(A\cap B\)</span>が起こり、2回目に<span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span>が起こる確率<br />
+3つの事象<span class="math notranslate nohighlight">\(A, B, C\)</span>がそれぞれちょうど1回ずつ起こる確率<br />
 – <a class="reference external" href="https://www.toshin.com/center/2018/sugaku-1a_mondai_3.html">東進</a></p></li>
-</ul>
+</ol>
 </div></blockquote>
-<ol>
-<li><p>事象<span class="math notranslate nohighlight">\(A\)</span>においては大小のサイコロは独立事象なので、</p>
+<ol class="simple">
+<li><p>事象<span class="math notranslate nohighlight">\(A\)</span>においては大小のサイコロは独立事象なので、</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[
-	P(A) = \dfrac{1}{6}
-	\]</div>
+P(A) = \dfrac{1}{6}
+\]</div>
 <p>事象<span class="math notranslate nohighlight">\(B\)</span>のケースは{1,6},{2,5},{3,4},{4,3},{5,2},{6,1}の6通り。全事象は36通りなので、</p>
 <div class="math notranslate nohighlight">
 \[
-	P(B) = \dfrac{|B|}{|U|} = \dfrac{1}{6}
-	\]</div>
+P(B) = \dfrac{|B|}{|U|} = \dfrac{1}{6}
+\]</div>
 <p>事象<span class="math notranslate nohighlight">\(C\)</span>のケースは{3,6},{4,5},{5,4},{6,3}の4通りなので、</p>
 <div class="math notranslate nohighlight">
 \[
-	P(C) = \dfrac{|C|}{|U|} = \dfrac{4}{36}
-	= \dfrac{1}{9}
-	\]</div>
-</li>
-<li><p><span class="math notranslate nohighlight">\(P(A|C)\)</span>と<span class="math notranslate nohighlight">\(P(C|A)\)</span>を求める。事象<span class="math notranslate nohighlight">\(A \cap C\)</span>は{4, 5}の1通りしかない。</p>
+P(C) = \dfrac{|C|}{|U|} = \dfrac{4}{36}
+= \dfrac{1}{9}
+\]</div>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A|C)\)</span>と<span class="math notranslate nohighlight">\(P(C|A)\)</span>を求める。事象<span class="math notranslate nohighlight">\(A \cap C\)</span>は{4, 5}の1通りしかない。</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}
-	P(A) = \dfrac{1}{6}\\
-	P(C) = \dfrac{1}{9}\\
-	P(A \cap C) = \dfrac{1}{36}\\\end{split}\\\begin{split}	P(A|C) = \dfrac{P(A \cap C)}{P(C)}\\
-	= \dfrac{1}{36} \times \dfrac{9}{1}\\
-	= \dfrac{1}{4}\\\end{split}\\\begin{split}	P(C|A) = \dfrac{P(A \cap C)}{P(A)}\\
-	= \dfrac{1}{36} \times \dfrac{6}{1}\\
-	= \dfrac{1}{6}
-	\end{split}\end{aligned}\end{align} \]</div>
-</li>
-<li><p>事象<span class="math notranslate nohighlight">\(A \cap B\)</span>は{4, 3}の1通りなので、</p>
+P(A) = \dfrac{1}{6}\\
+P(C) = \dfrac{1}{9}\\
+P(A \cap C) = \dfrac{1}{36}\\\end{split}\\\begin{split}P(A|C) = \dfrac{P(A \cap C)}{P(C)}\\
+= \dfrac{1}{36} \times \dfrac{9}{1}\\
+= \dfrac{1}{4}\\\end{split}\\\begin{split}P(C|A) = \dfrac{P(A \cap C)}{P(A)}\\
+= \dfrac{1}{36} \times \dfrac{6}{1}\\
+= \dfrac{1}{6}
+\end{split}\end{aligned}\end{align} \]</div>
+<ol class="simple">
+<li><p>事象<span class="math notranslate nohighlight">\(A \cap B\)</span>は{4, 3}の1通りなので、</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	P(A \cap B) = \dfrac{1}{36}\\
-	P(A)P(B) = \dfrac{1}{6} \cdot \dfrac{1}{6}\\
-	\dfrac{1}{36} == \dfrac{1}{36}\\
-	\therefore
-	P(A \cap B) == P(A)P(B)
-	\end{split}\]</div>
+P(A \cap B) = \dfrac{1}{36}\\
+P(A)P(B) = \dfrac{1}{6} \cdot \dfrac{1}{6}\\
+\dfrac{1}{36} == \dfrac{1}{36}\\
+\therefore
+P(A \cap B) == P(A)P(B)
+\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(P(A \cap C)\)</span>は問２で求めたので、</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	P(A \cap C) = \dfrac{1}{4}\\
-	P(A)P(C) = \dfrac{1}{6} \cdot \dfrac{1}{9}\\
-	= \dfrac{1}{54}\\
-	\dfrac{1}{4} &gt; \dfrac{1}{54}\\
-	\therefore
-	P(A \cap C) &gt; P(A)P(C)
-	\end{split}\]</div>
-</li>
-<li><p>1回目に事象<span class="math notranslate nohighlight">\(A\cap B\)</span>が起こり、2回目に<span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span>が起こる確率は、1回目が2回目に影響を与えない独立事象なので、それぞれの確率を掛け算すればよい。</p>
+P(A \cap C) = \dfrac{1}{4}\\
+P(A)P(C) = \dfrac{1}{6} \cdot \dfrac{1}{9}\\
+= \dfrac{1}{54}\\
+\dfrac{1}{4} &gt; \dfrac{1}{54}\\
+\therefore
+P(A \cap C) &gt; P(A)P(C)
+\end{split}\]</div>
+<ol class="simple">
+<li><p>1回目に事象<span class="math notranslate nohighlight">\(A\cap B\)</span>が起こり、2回目に<span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span>が起こる確率は、1回目が2回目に影響を与えない独立事象なので、それぞれの確率を掛け算すればよい。</p></li>
+</ol>
 <p>事象<span class="math notranslate nohighlight">\(\overline{A} \cap C\)</span>は「大きいサイコロで4以外が出る」かつ「2個のサイコロの出目の合計が９」になる。</p>
 <p>ケースとしては、</p>
 <ul class="simple">
@@ -934,11 +928,11 @@ P(A \cap B) = \dfrac{34-11}{36}=\dfrac{23}{36}\\\end{split}\\\begin{split}\there
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	P(\overline{A} \cap C) = \dfrac{3}{36}\\
-	P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
-	= \dfrac{1}{36} \cdot \dfrac{3}{36}\\
-	= \dfrac{1}{432}
-	\end{split}\]</div>
+P(\overline{A} \cap C) = \dfrac{3}{36}\\
+P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
+= \dfrac{1}{36} \cdot \dfrac{3}{36}\\
+= \dfrac{1}{432}
+\end{split}\]</div>
 <p>事象<span class="math notranslate nohighlight">\(A, B, C\)</span>がそれぞれ1回ずつ起こる確率は、</p>
 <table class="colwidths-auto table">
 <thead>
@@ -964,10 +958,10 @@ P(A \cap B) = \dfrac{34-11}{36}=\dfrac{23}{36}\\\end{split}\\\begin{split}\there
 <p>の4パターン考えられる。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	P(A \cap B) = \dfrac{1}{36}\\
-	P(A \cap C) = \dfrac{1}{36}\\
-	P(\overline{A} \cap C) = \dfrac{1}{12}\\
-	\end{split}\]</div>
+P(A \cap B) = \dfrac{1}{36}\\
+P(A \cap C) = \dfrac{1}{36}\\
+P(\overline{A} \cap C) = \dfrac{1}{12}\\
+\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(\overline{A} \cap B\)</span>のケースは、</p>
 <ul class="simple">
 <li><p>{1, 6}</p></li>
@@ -979,19 +973,17 @@ P(A \cap B) = \dfrac{34-11}{36}=\dfrac{23}{36}\\\end{split}\\\begin{split}\there
 <p>の５通りなので、<span class="math notranslate nohighlight">\(P(\overline{A} \cap B) = \dfrac{5}{36}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
-	+ P(A \cap C) \cdot P(\overline{A} \cap B)\\
-	+ P(B) \cdot P(A \cap C)\\
-	+ P(C) \cdot P(A \cap B)\\
-	= 2 \times \dfrac{1}{36} \cdot \dfrac{1}{12}\\
-	+ 2 \times \dfrac{1}{36} \cdot \dfrac{5}{36}\\
-	= \dfrac{1}{18}(\dfrac{3}{36}+\dfrac{5}{36})\\
-	= \dfrac{1}{18} \cdot \dfrac{8}{36}\\
-	= \dfrac{1}{9} \cdot \dfrac{1}{9}\
-	= \dfrac{1}{81}
-	\end{split}\]</div>
-</li>
-</ol>
+P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
++ P(A \cap C) \cdot P(\overline{A} \cap B)\\
++ P(B) \cdot P(A \cap C)\\
++ P(C) \cdot P(A \cap B)\\
+= 2 \times \dfrac{1}{36} \cdot \dfrac{1}{12}\\
++ 2 \times \dfrac{1}{36} \cdot \dfrac{5}{36}\\
+= \dfrac{1}{18}(\dfrac{3}{36}+\dfrac{5}{36})\\
+= \dfrac{1}{18} \cdot \dfrac{8}{36}\\
+= \dfrac{1}{9} \cdot \dfrac{1}{9}\
+= \dfrac{1}{81}
+\end{split}\]</div>
 </section>
 </section>
 </section>

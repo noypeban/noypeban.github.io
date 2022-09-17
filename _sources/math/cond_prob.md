@@ -244,126 +244,126 @@ $$
 > - 事象B: 2個のサイコロの出目の和が7
 > - 事象C: 2個のサイコロの出目の和が9
 > 1. A,B,Cの確率は？
-> 2. それぞれの確率は？
-> 	- Cが起きた時のAが起こる条件付確率と、
-> 	- Aが起きた時のCが起こる条件付き確率は？
-> 3. 不等号は？
-> 	- $P(A \cap B)$ vs $P(A)P(B)$
-> 	- $P(A \cap C)$ vs $P(A)P(C)$
-> 4. 大小2個のサイコロを同時に投げる試行を2回繰り返す。
-> 	- 1回目に事象$A\cap B$が起こり、2回目に$\overline{A} \cap C$が起こる確率
-> 	- 3つの事象$A, B, C$がそれぞれちょうど1回ずつ起こる確率
+> 2. それぞれの確率は？  
+> 	Cが起きた時のAが起こる条件付確率と、  
+> 	Aが起きた時のCが起こる条件付き確率は？
+> 3. 不等号は？  
+> 	$P(A \cap B)$ vs $P(A)P(B)$  
+> 	$P(A \cap C)$ vs $P(A)P(C)$
+> 4. 大小2個のサイコロを同時に投げる試行を2回繰り返す。  
+> 	1回目に事象$A\cap B$が起こり、2回目に$\overline{A} \cap C$が起こる確率  
+> 	3つの事象$A, B, C$がそれぞれちょうど1回ずつ起こる確率  
 > -- [東進](https://www.toshin.com/center/2018/sugaku-1a_mondai_3.html)
 
 1. 事象$A$においては大小のサイコロは独立事象なので、
 
-	$$
-	P(A) = \dfrac{1}{6}
-	$$
+$$
+P(A) = \dfrac{1}{6}
+$$
 
-	事象$B$のケースは{1,6},{2,5},{3,4},{4,3},{5,2},{6,1}の6通り。全事象は36通りなので、
+事象$B$のケースは{1,6},{2,5},{3,4},{4,3},{5,2},{6,1}の6通り。全事象は36通りなので、
 
-	$$
-	P(B) = \dfrac{|B|}{|U|} = \dfrac{1}{6}
-	$$
+$$
+P(B) = \dfrac{|B|}{|U|} = \dfrac{1}{6}
+$$
 
-	事象$C$のケースは{3,6},{4,5},{5,4},{6,3}の4通りなので、
+事象$C$のケースは{3,6},{4,5},{5,4},{6,3}の4通りなので、
 
-	$$
-	P(C) = \dfrac{|C|}{|U|} = \dfrac{4}{36}
-	= \dfrac{1}{9}
-	$$
+$$
+P(C) = \dfrac{|C|}{|U|} = \dfrac{4}{36}
+= \dfrac{1}{9}
+$$
 
 2. $P(A|C)$と$P(C|A)$を求める。事象$A \cap C$は{4, 5}の1通りしかない。
 
-	$$
-	P(A) = \dfrac{1}{6}\\
-	P(C) = \dfrac{1}{9}\\
-	P(A \cap C) = \dfrac{1}{36}\\
+$$
+P(A) = \dfrac{1}{6}\\
+P(C) = \dfrac{1}{9}\\
+P(A \cap C) = \dfrac{1}{36}\\
 
-	P(A|C) = \dfrac{P(A \cap C)}{P(C)}\\
-	= \dfrac{1}{36} \times \dfrac{9}{1}\\
-	= \dfrac{1}{4}\\
+P(A|C) = \dfrac{P(A \cap C)}{P(C)}\\
+= \dfrac{1}{36} \times \dfrac{9}{1}\\
+= \dfrac{1}{4}\\
 
-	P(C|A) = \dfrac{P(A \cap C)}{P(A)}\\
-	= \dfrac{1}{36} \times \dfrac{6}{1}\\
-	= \dfrac{1}{6}
-	$$
+P(C|A) = \dfrac{P(A \cap C)}{P(A)}\\
+= \dfrac{1}{36} \times \dfrac{6}{1}\\
+= \dfrac{1}{6}
+$$
 
 3. 事象$A \cap B$は{4, 3}の1通りなので、
 
-	$$
-	P(A \cap B) = \dfrac{1}{36}\\
-	P(A)P(B) = \dfrac{1}{6} \cdot \dfrac{1}{6}\\
-	\dfrac{1}{36} == \dfrac{1}{36}\\
-	\therefore
-	P(A \cap B) == P(A)P(B)
-	$$
+$$
+P(A \cap B) = \dfrac{1}{36}\\
+P(A)P(B) = \dfrac{1}{6} \cdot \dfrac{1}{6}\\
+\dfrac{1}{36} == \dfrac{1}{36}\\
+\therefore
+P(A \cap B) == P(A)P(B)
+$$
 
-	$P(A \cap C)$は問２で求めたので、
+$P(A \cap C)$は問２で求めたので、
 
-	$$
-	P(A \cap C) = \dfrac{1}{4}\\
-	P(A)P(C) = \dfrac{1}{6} \cdot \dfrac{1}{9}\\
-	= \dfrac{1}{54}\\
-	\dfrac{1}{4} > \dfrac{1}{54}\\
-	\therefore
-	P(A \cap C) > P(A)P(C)
-	$$
+$$
+P(A \cap C) = \dfrac{1}{4}\\
+P(A)P(C) = \dfrac{1}{6} \cdot \dfrac{1}{9}\\
+= \dfrac{1}{54}\\
+\dfrac{1}{4} > \dfrac{1}{54}\\
+\therefore
+P(A \cap C) > P(A)P(C)
+$$
 
 4. 1回目に事象$A\cap B$が起こり、2回目に$\overline{A} \cap C$が起こる確率は、1回目が2回目に影響を与えない独立事象なので、それぞれの確率を掛け算すればよい。
 
-	事象$\overline{A} \cap C$は「大きいサイコロで4以外が出る」かつ「2個のサイコロの出目の合計が９」になる。
+事象$\overline{A} \cap C$は「大きいサイコロで4以外が出る」かつ「2個のサイコロの出目の合計が９」になる。
 
-	ケースとしては、
-	- {3, 6}
-	- {5, 4}
-	- {6, 3}
-	の3通り
+ケースとしては、
+- {3, 6}
+- {5, 4}
+- {6, 3}
+の3通り
 
-	$$
-	P(\overline{A} \cap C) = \dfrac{3}{36}\\
-	P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
-	= \dfrac{1}{36} \cdot \dfrac{3}{36}\\
-	= \dfrac{1}{432}
-	$$
+$$
+P(\overline{A} \cap C) = \dfrac{3}{36}\\
+P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
+= \dfrac{1}{36} \cdot \dfrac{3}{36}\\
+= \dfrac{1}{432}
+$$
 
-	事象$A, B, C$がそれぞれ1回ずつ起こる確率は、
+事象$A, B, C$がそれぞれ1回ずつ起こる確率は、
 
-	1回目|2回目
-	-|-
-	$A \cap B$|$\overline{A} \cap C$
-	$A \cap C$|$\overline{A} \cap B$
-	$\overline{A} \cap B$|$A \cap C$
-	$\overline{A} \cap C$|$A \cap B$
+1回目|2回目
+-|-
+$A \cap B$|$\overline{A} \cap C$
+$A \cap C$|$\overline{A} \cap B$
+$\overline{A} \cap B$|$A \cap C$
+$\overline{A} \cap C$|$A \cap B$
 
-	の4パターン考えられる。
+の4パターン考えられる。
 
-	$$
-	P(A \cap B) = \dfrac{1}{36}\\
-	P(A \cap C) = \dfrac{1}{36}\\
-	P(\overline{A} \cap C) = \dfrac{1}{12}\\
-	$$
+$$
+P(A \cap B) = \dfrac{1}{36}\\
+P(A \cap C) = \dfrac{1}{36}\\
+P(\overline{A} \cap C) = \dfrac{1}{12}\\
+$$
 
-	$\overline{A} \cap B$のケースは、
+$\overline{A} \cap B$のケースは、
 
-	- {1, 6}
-	- {2, 5}
-	- {3, 4}
-	- {5, 2}
-	- {6, 1}
+- {1, 6}
+- {2, 5}
+- {3, 4}
+- {5, 2}
+- {6, 1}
 
-	の５通りなので、$P(\overline{A} \cap B) = \dfrac{5}{36}$
+の５通りなので、$P(\overline{A} \cap B) = \dfrac{5}{36}$
 
-	$$
-	P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
-	+ P(A \cap C) \cdot P(\overline{A} \cap B)\\
-	+ P(B) \cdot P(A \cap C)\\
-	+ P(C) \cdot P(A \cap B)\\
-	= 2 \times \dfrac{1}{36} \cdot \dfrac{1}{12}\\
-	+ 2 \times \dfrac{1}{36} \cdot \dfrac{5}{36}\\
-	= \dfrac{1}{18}(\dfrac{3}{36}+\dfrac{5}{36})\\
-	= \dfrac{1}{18} \cdot \dfrac{8}{36}\\
-	= \dfrac{1}{9} \cdot \dfrac{1}{9}\
-	= \dfrac{1}{81}
-	$$
+$$
+P = P(A \cap B) \cdot P(\overline{A} \cap C)\\
++ P(A \cap C) \cdot P(\overline{A} \cap B)\\
++ P(B) \cdot P(A \cap C)\\
++ P(C) \cdot P(A \cap B)\\
+= 2 \times \dfrac{1}{36} \cdot \dfrac{1}{12}\\
++ 2 \times \dfrac{1}{36} \cdot \dfrac{5}{36}\\
+= \dfrac{1}{18}(\dfrac{3}{36}+\dfrac{5}{36})\\
+= \dfrac{1}{18} \cdot \dfrac{8}{36}\\
+= \dfrac{1}{9} \cdot \dfrac{1}{9}\
+= \dfrac{1}{81}
+$$
