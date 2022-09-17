@@ -76,48 +76,53 @@ exp
 正規分布に従う誤差が同時に観測される確率$L$は対数尤度の式より、
 
 $$
-L(x)=\prod_{i=1}^n f(x_i)\\
-= \prod_{i=1}^n
+\begin{align*}
+L(x)
+&=\prod_{i=1}^n f(x_i)\\
+&= \prod_{i=1}^n
 \dfrac{1}{\sqrt{2 \pi \sigma ^2}}
 exp
 [-\dfrac{(x-\mu)^2}{2\sigma ^2}
 ]
+\end{align*}
 $$
 
 その対数尤度関数は、
 
 $$
-L(x) = \sum_{i=1}^n ln \dfrac{1}{\sqrt{2 \pi \sigma^2}}
+\begin{align*}
+L(x) &= \sum_{i=1}^n ln \dfrac{1}{\sqrt{2 \pi \sigma^2}}
 exp
 [-\dfrac{(x-\mu)^2}{2\sigma ^2}
 ]\\
 
-=\sum_{i=1}^n
+&=\sum_{i=1}^n
 \ln \dfrac{1}{\sqrt{2 \pi \sigma^2}}
 + \sum_{i=1}^n
 \ln exp[-\dfrac{(x-\mu)^2}{2\sigma ^2}
 ]\\
 
-=\sum_{i=1}^n
+&=\sum_{i=1}^n
 (\ln 1 - \ln \sqrt{2 \pi \sigma^2})
 + \sum_{i=1}^n
 -\dfrac{1}{2\sigma ^2}(x-\mu)^2\\
 
-=\sum_{i=1}^n
+&=\sum_{i=1}^n
 (0 - \ln (2 \pi \sigma^2)^{\dfrac{1}{2}})
 -\dfrac{1}{2\sigma ^2}
  \sum_{i=1}^n
 (x-\mu)^2\\
 
-= - \dfrac{n}{2} \ln (2 \pi \sigma^2)
+&= - \dfrac{n}{2} \ln (2 \pi \sigma^2)
 -\dfrac{1}{2\sigma ^2}
  \sum_{i=1}^n
 (x-\mu)^2\\
 
-=- \dfrac{n}{2} \ln (2 \pi \sigma^2)
+&=- \dfrac{n}{2} \ln (2 \pi \sigma^2)
 -\dfrac{1}{2 \sigma^2}
 \sum_{i=1}^n
 (y_i - (\sum_{j=1}^k x_{ij} \beta_j + \beta_0))^2
+\end{align*}
 $$
 
 ここで$\dfrac{n}{2} \ln (2 \pi \sigma^2)$は$\beta$に対して定数項なので、上記の対数尤度関数を最大化する$\beta$を求めることは
