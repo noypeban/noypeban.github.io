@@ -77,8 +77,8 @@ exp
 
 $$
 L(x)
-&= \prod_{i=1}^n f(x_i)\\
-&= \prod_{i=1}^n
+= \prod_{i=1}^n f(x_i)\\
+= \prod_{i=1}^n
 \dfrac{1}{\sqrt{2 \pi \sigma ^2}}
 exp
 [-\dfrac{(x-\mu)^2}{2\sigma ^2}]
@@ -87,34 +87,34 @@ $$
 その対数尤度関数は、
 
 $$
-L(x) &= \sum_{i=1}^n ln \dfrac{1}{\sqrt{2 \pi \sigma^2}}
+L(x) = \sum_{i=1}^n ln \dfrac{1}{\sqrt{2 \pi \sigma^2}}
 exp
 [-\dfrac{(x-\mu)^2}{2\sigma ^2}
 ]\\
 
-&=\sum_{i=1}^n
+=\sum_{i=1}^n
 \ln \dfrac{1}{\sqrt{2 \pi \sigma^2}}
 + \sum_{i=1}^n
 \ln exp[-\dfrac{(x-\mu)^2}{2\sigma ^2}
 ]\\
 
-&=\sum_{i=1}^n
+=\sum_{i=1}^n
 (\ln 1 - \ln \sqrt{2 \pi \sigma^2})
 + \sum_{i=1}^n
 -\dfrac{1}{2\sigma ^2}(x-\mu)^2\\
 
-&=\sum_{i=1}^n
+=\sum_{i=1}^n
 (0 - \ln (2 \pi \sigma^2)^{\dfrac{1}{2}})
 -\dfrac{1}{2\sigma ^2}
  \sum_{i=1}^n
 (x-\mu)^2\\
 
-&= - \dfrac{n}{2} \ln (2 \pi \sigma^2)
+= - \dfrac{n}{2} \ln (2 \pi \sigma^2)
 -\dfrac{1}{2\sigma ^2}
  \sum_{i=1}^n
 (x-\mu)^2\\
 
-&=- \dfrac{n}{2} \ln (2 \pi \sigma^2)
+=- \dfrac{n}{2} \ln (2 \pi \sigma^2)
 -\dfrac{1}{2 \sigma^2}
 \sum_{i=1}^n
 (y_i - (\sum_{j=1}^k x_{ij} \beta_j + \beta_0))^2
