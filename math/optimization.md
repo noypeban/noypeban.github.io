@@ -76,15 +76,12 @@ exp
 正規分布に従う誤差が同時に観測される確率$L$は対数尤度の式より、
 
 $$
-\begin{align*}
 L(x)
-&=\prod_{i=1}^n f(x_i)\\
+&= \prod_{i=1}^n f(x_i)\\
 &= \prod_{i=1}^n
 \dfrac{1}{\sqrt{2 \pi \sigma ^2}}
 exp
-[-\dfrac{(x-\mu)^2}{2\sigma ^2}
-]
-\end{align*}
+[-\dfrac{(x-\mu)^2}{2\sigma ^2}]
 $$
 
 その対数尤度関数は、
@@ -122,6 +119,7 @@ exp
 -\dfrac{1}{2 \sigma^2}
 \sum_{i=1}^n
 (y_i - (\sum_{j=1}^k x_{ij} \beta_j + \beta_0))^2
+
 \end{split}
 $$
 
