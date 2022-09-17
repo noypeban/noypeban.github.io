@@ -554,15 +554,12 @@ exp
 <p>正規分布に従う誤差が同時に観測される確率<span class="math notranslate nohighlight">\(L\)</span>は対数尤度の式より、</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{align*}
 L(x)
-&amp;=\prod_{i=1}^n f(x_i)\\
+&amp;= \prod_{i=1}^n f(x_i)\\
 &amp;= \prod_{i=1}^n
 \dfrac{1}{\sqrt{2 \pi \sigma ^2}}
 exp
-[-\dfrac{(x-\mu)^2}{2\sigma ^2}
-]
-\end{align*}
+[-\dfrac{(x-\mu)^2}{2\sigma ^2}]
 \end{split}\]</div>
 <p>その対数尤度関数は、</p>
 <div class="math notranslate nohighlight">
@@ -588,8 +585,7 @@ exp
 (x-\mu)^2\\\end{split}\\&amp;=- \dfrac{n}{2} \ln (2 \pi \sigma^2)
 -\dfrac{1}{2 \sigma^2}
 \sum_{i=1}^n
-(y_i - (\sum_{j=1}^k x_{ij} \beta_j + \beta_0))^2
-\end{split}
+(y_i - (\sum_{j=1}^k x_{ij} \beta_j + \beta_0))^2\\\end{split}
 \end{aligned}\end{align} \]</div>
 <p>ここで<span class="math notranslate nohighlight">\(\dfrac{n}{2} \ln (2 \pi \sigma^2)\)</span>は<span class="math notranslate nohighlight">\(\beta\)</span>に対して定数項なので、上記の対数尤度関数を最大化する<span class="math notranslate nohighlight">\(\beta\)</span>を求めることは</p>
 <div class="math notranslate nohighlight">
