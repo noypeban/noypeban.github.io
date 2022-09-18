@@ -456,8 +456,10 @@ A = np.array([
 	[2,-4,2]
 	])
 w,P =LA.eig(A)
-# Aの固有値
-w
+
+# Aを対角化した行列D
+D = np.diag(w)
+D
 ```
 
 ```{code-cell} python
@@ -466,9 +468,52 @@ P
 ```
 
 ```{code-cell} python
+# 列毎に整数化
+P = np.array([
+    [0, 1, 1],
+    [0, 0, 1],
+    [1, -2, -2]
+])
+```
+
+```{code-cell} python
 # Pの逆行列
 P1 = LA.inv(P)
+P1
 ```
+
+よって、Aを対角化すると
+
+$$
+P^{-1}AP = D\\
+
+\begin{pmatrix}
+2 & 0 & 1\\
+1 & 1 & 0\\
+0 & -1 & 0
+\end{pmatrix}
+
+\begin{pmatrix}
+1 & 2 & 0\\
+0 & 3 & 0\\
+2 & -4 & 2
+\end{pmatrix}
+
+\begin{pmatrix}
+0 & 1 & 1\\
+0 & 0 & 1\\
+1 & -2 & -2
+\end{pmatrix}
+
+=
+
+\begin{pmatrix}
+2 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 3
+\end{pmatrix}
+
+$$
 
 $X=\begin{pmatrix}3&1\\2&2\end{pmatrix}$のn乗は？
 
