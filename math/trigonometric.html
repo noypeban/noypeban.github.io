@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>指数・対数 &#8212; noypeban.github.io</title>
+    <title>三角関数 &#8212; noypeban.github.io</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="行列" href="matrix.html" />
-    <link rel="prev" title="情報理論" href="information_theory.html" />
+    <link rel="next" title="k-means" href="algorithm/kmeans.html" />
+    <link rel="prev" title="よく見る小数" href="quotient.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -136,8 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
    情報理論
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="log.html">
    指数・対数
   </a>
  </li>
@@ -156,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
    よく見る小数
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="trigonometric.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    三角関数
   </a>
  </li>
@@ -324,7 +324,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/noypeban/noypeban.github.io/issues/new?title=Issue%20on%20page%20%2Fmath/log.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/noypeban/noypeban.github.io/issues/new?title=Issue%20on%20page%20%2Fmath/trigonometric.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -352,7 +352,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/math/log.md"
+        <a href="../_sources/math/trigonometric.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -413,47 +413,13 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   べき乗
+   定義
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     基本
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     指数法則
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   対数関数
+  <a class="reference internal nav-link" href="#id3">
+   公式
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     定義
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     公式
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     底の変換公式
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     自然対数
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -464,7 +430,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>指数・対数</h1>
+                <h1>三角関数</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -476,47 +442,13 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   べき乗
+   定義
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     基本
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     指数法則
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   対数関数
+  <a class="reference internal nav-link" href="#id3">
+   公式
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     定義
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     公式
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     底の変換公式
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     自然対数
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -529,90 +461,29 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>指数・対数<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>三角関数<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <section id="id2">
-<h2>べき乗<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>定義<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>単位円上の点<span class="math notranslate nohighlight">\(P(x,y)\)</span>と<span class="math notranslate nohighlight">\(x\)</span>軸の作る角<span class="math notranslate nohighlight">\(\theta\)</span>を使うと、三角関数は以下のように表せられる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sin \theta = y\\
+\cos \theta = x\\
+\tan \theta = \dfrac{y}{x} = \dfrac{\sin \theta}{\cos \theta}
+\end{split}\]</div>
+</section>
 <section id="id3">
-<h3>基本<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h2>公式<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
-\[ a^1 = a\]</div>
-<div class="math notranslate nohighlight">
-\[ a^0 = 1\]</div>
-<div class="math notranslate nohighlight">
-\[ a^{-1} = \dfrac{1}{a}\]</div>
-<div class="math notranslate nohighlight">
-\[ a^{-n} = \dfrac{1}{a^n}\]</div>
-<div class="math notranslate nohighlight">
-\[ a^{\frac{1}{2}} = \sqrt{a}\]</div>
-<div class="math notranslate nohighlight">
-\[ a^{\frac{1}{n}} = \sqrt[n]{a}\]</div>
-<div class="math notranslate nohighlight">
-\[ a^{\frac{m}{n}} = \sqrt[n]{a^m}\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>べき乗の指数が自然数の場合を累乗と言う</p>
-</div>
-</section>
-<section id="id4">
-<h3>指数法則<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(a,b\)</span>を任意の数、<span class="math notranslate nohighlight">\(m,m\)</span>を正の整数とすると</p>
-<div class="math notranslate nohighlight">
-\[a^m \times a^n = a^{m+n}\]</div>
-<div class="math notranslate nohighlight">
-\[a^m \div a^n = a^{m-n}\]</div>
-<div class="math notranslate nohighlight">
-\[(a^m)^n = a^{mn}\]</div>
-<div class="math notranslate nohighlight">
-\[(ab)^n = 	a^n b^n\]</div>
-<div class="math notranslate nohighlight">
-\[(\dfrac{a}{b})^n = \dfrac{a^n}{b^n}\]</div>
-</section>
-</section>
-<section id="id5">
-<h2>対数関数<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
-<section id="id6">
-<h3>定義<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(a &gt; 0, a \neq 1, M &gt; 0\)</span> の時</p>
-<div class="math notranslate nohighlight">
-\[
-a^p = M
-\Longleftrightarrow
-\log_a M = p
-\]</div>
-<blockquote>
-<div><p>“log of <span class="math notranslate nohighlight">\(M\)</span> to the base <span class="math notranslate nohighlight">\(a\)</span>”
-– <a class="reference external" href="https://you-eigo.com/logarithms/">https://you-eigo.com/logarithms/</a></p>
-</div></blockquote>
-</section>
-<section id="id7">
-<h3>公式<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(a &gt; 0, a \neq 1, M &gt; 0\)</span> の時</p>
-<div class="math notranslate nohighlight">
-\[ \log_a a = 1 \]</div>
-<div class="math notranslate nohighlight">
-\[ \log_a 1 = 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ \log MN = \log M + \log N\]</div>
-<div class="math notranslate nohighlight">
-\[ \log \dfrac{M}{N} = \log M - \log N \]</div>
-<div class="math notranslate nohighlight">
-\[ \log M^r = r \log M\]</div>
-</section>
-<section id="id8">
-<h3>底の変換公式<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(a, b, c &gt; 0, a, b, c \neq 1\)</span> の時</p>
-<div class="math notranslate nohighlight">
-\[\log_a b = \dfrac{\log_c b}{\log_c a}\]</div>
-<div class="math notranslate nohighlight">
-\[\log_a b = \dfrac{1}{\log_b a}\]</div>
-</section>
-<section id="id9">
-<h3>自然対数<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<div class="math notranslate nohighlight">
-\[ \ln x = \log_e x\]</div>
-<div class="math notranslate nohighlight">
-\[ \ln exp(x) = \log_e e^{x} = x\]</div>
-</section>
+\[\begin{split}
+\sin^2 \theta + \cos^2 \theta = 1\\
+\tan^2 \theta + 1 = \dfrac{1}{\cos^2 \theta}\\
+\end{split}\]</div>
+<p>導出は、</p>
+<ul class="simple">
+<li><p>円の方程式<span class="math notranslate nohighlight">\(x^2+y^2=1\)</span>に<span class="math notranslate nohighlight">\(x=\cos \theta\)</span>, <span class="math notranslate nohighlight">\(y=\sin \theta\)</span>を代入</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin^2 \theta+\cos^2 \theta=1\)</span>を<span class="math notranslate nohighlight">\(\cos^2 \theta\)</span>を割る</p></li>
+</ul>
 </section>
 </section>
 
@@ -643,17 +514,17 @@ a^p = M
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="information_theory.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="quotient.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">情報理論</p>
+            <p class="prev-next-title">よく見る小数</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="matrix.html" title="next page">
+    <a class='right-next' id="next-link" href="algorithm/kmeans.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">行列</p>
+        <p class="prev-next-title">k-means</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
