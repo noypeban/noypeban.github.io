@@ -23,19 +23,51 @@ $$
 ::::{grid} 2
 :::{grid-item}
 $$
-\sin(90\degree-\theta)=\cos \theta\\
-\sin(90\degree+\theta)=\cos \theta\\
-\sin(180\degree+\theta)=-\sin \theta
+\sin(90^{\circ}-\theta)=\cos \theta\\
+\sin(90^{\circ}+\theta)=\cos \theta\\
+\sin(180^{\circ}+\theta)=-\sin \theta
 $$
 :::
 :::{grid-item}
 $$
-\cos(90\degree-\theta)=\sin \theta\\
-\cos(90\degree+\theta)=-\sin \theta\\
-\cos(90\degree+\theta)=-\cos \theta
+\cos(90^{\circ}-\theta)=\sin \theta\\
+\cos(90^{\circ}+\theta)=-\sin \theta\\
+\cos(90^{\circ}+\theta)=-\cos \theta
 $$
 :::
 ::::
 
 ## 正弦定理
+
+$\triangle ABC$において$AB=c, BC=a, CA=b$とする。  
+$\angle ABC=B, \angle BCA=C, \angle CAB=a$とする。  
+$\triangle ABC$の外接円の半径を$R$とする。
+
+$$
+\dfrac{a}{\sin A} = 
+\dfrac{b}{\sin B} = 
+\dfrac{c}{\sin C} = 2R
+$$
+
+### 例題：ほかの角を求める
+
+> a = 4, A = 30º, B = 105º のとき、c の値を求めよ。  
+> -- [スタディクラブ](https://study-club.jp/news/seigen-yogen/)
+
+$$
+\angle C = 180^{\circ} - (30+105) = 45^{\circ}\\
+$$
+
+正弦定理より、
+
+$$
+\dfrac{a}{\sin A} = 
+\dfrac{c}{\sin C}\\
+=
+\dfrac{4}{\sin 30^{\circ}} = 
+\dfrac{c}{\sin 45^{\circ}}\\
+\therefore
+c = \dfrac{4}{\sin 30^{\circ}}\times \sin 45^{\circ}\\
+= \dfrac{4\cdot 2}{\sqrt{2}}\\
+= 4 \sqrt{2}
 
