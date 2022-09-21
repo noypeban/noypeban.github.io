@@ -70,4 +70,5 @@ $$
 c = \dfrac{4}{\sin 30^{\circ}}\times \sin 45^{\circ}\\
 = \dfrac{4\cdot 2}{\sqrt{2}}\\
 = 4 \sqrt{2}
+$$
 
