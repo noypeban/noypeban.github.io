@@ -423,12 +423,53 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   正弦定理
+   加法定理
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     例題：ほかの角を求める
+     導出
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   正弦定理
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     例題：１角２辺の情報から他辺を求める
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   余弦定理
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     例題：２辺１角の情報から他辺を求める
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   極限
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   微分
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     導出
     </a>
    </li>
   </ul>
@@ -464,12 +505,53 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   正弦定理
+   加法定理
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     例題：ほかの角を求める
+     導出
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   正弦定理
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     例題：１角２辺の情報から他辺を求める
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   余弦定理
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     例題：２辺１角の情報から他辺を求める
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   極限
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   微分
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     導出
     </a>
    </li>
   </ul>
@@ -488,13 +570,26 @@ title="Print to PDF"
 <h1>三角関数<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <section id="id2">
 <h2>定義<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>単位円上の点<span class="math notranslate nohighlight">\(P(x,y)\)</span>と<span class="math notranslate nohighlight">\(x\)</span>軸の作る角<span class="math notranslate nohighlight">\(\theta\)</span>を使うと、三角関数は以下のように表せられる。</p>
+<p><span class="math notranslate nohighlight">\(A\)</span>が正角<span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(B\)</span>が直角である直角三角形<span class="math notranslate nohighlight">\(\triangle ABC\)</span>を考えると、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sin \theta = \dfrac{BC}{AC}\\
+\cos \theta = \dfrac{AB}{AC}\\
+\tan \theta = \dfrac{BC}{AB}
+\end{split}\]</div>
+<p>また、単位円上の点<span class="math notranslate nohighlight">\(P(x,y)\)</span>と<span class="math notranslate nohighlight">\(x\)</span>軸の作る角<span class="math notranslate nohighlight">\(\theta\)</span>を使うと、三角関数は以下のように表せられる。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \sin \theta = y\\
 \cos \theta = x\\
 \tan \theta = \dfrac{y}{x} = \dfrac{\sin \theta}{\cos \theta}
 \end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>sin(正弦)…正角（注目している角）に対する弦の長さ
+cos(余弦)…余角（正角・直角以外の角）に対する弦の長さ
+tan(正接)…正角に対する接線の長さ</p>
+</div>
 </section>
 <section id="id3">
 <h2>公式<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
@@ -530,9 +625,20 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id4">
-<h2>正弦定理<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2>加法定理<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta\\\end{split}\\\begin{split}\sin(\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta\\\end{split}\\\begin{split}\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta\\\end{split}\\\begin{split}\cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta\\\end{split}\\\begin{split}\tan(\alpha + \beta) = \dfrac{\tan \alpha + \tan \beta}{1-\tan \alpha \tan \beta}\\\end{split}\\\begin{split}\tan(\alpha - \beta) = \dfrac{\tan \alpha - \tan \beta}{1+\tan \alpha \tan \beta}\\
+\end{split}\end{aligned}\end{align} \]</div>
+<section id="id5">
+<h3>導出<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="id6">
+<h2>正弦定理<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<p>角と正弦と、外接円の半径の関係式</p>
 <p><span class="math notranslate nohighlight">\(\triangle ABC\)</span>において<span class="math notranslate nohighlight">\(AB=c, BC=a, CA=b\)</span>とする。<br />
-<span class="math notranslate nohighlight">\(\angle ABC=B, \angle BCA=C, \angle CAB=a\)</span>とする。<br />
+<span class="math notranslate nohighlight">\(\angle ABC=B, \angle BCA=C, \angle CAB=A\)</span>とする。<br />
 <span class="math notranslate nohighlight">\(\triangle ABC\)</span>の外接円の半径を<span class="math notranslate nohighlight">\(R\)</span>とする。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -540,8 +646,8 @@ title="Print to PDF"
 \dfrac{b}{\sin B} = 
 \dfrac{c}{\sin C} = 2R
 \]</div>
-<section id="id5">
-<h3>例題：ほかの角を求める<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<section id="id7">
+<h3>例題：１角２辺の情報から他辺を求める<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>a = 4, A = 30º, B = 105º のとき、c の値を求めよ。<br />
 – <a class="reference external" href="https://study-club.jp/news/seigen-yogen/">スタディクラブ</a></p>
@@ -562,6 +668,61 @@ title="Print to PDF"
 c = \dfrac{4}{\sin 30^{\circ}}\times \sin 45^{\circ}\\
 = \dfrac{4\cdot 2}{\sqrt{2}}\\
 = 4 \sqrt{2}
+\end{split}\]</div>
+</section>
+</section>
+<section id="id8">
+<h2>余弦定理<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<p>隣接する２辺の長さとその間の角、残りの辺の長さの関係式。</p>
+<p><span class="math notranslate nohighlight">\(\triangle ABC\)</span>において<span class="math notranslate nohighlight">\(AB=c, BC=a, CA=b\)</span>とする。<br />
+<span class="math notranslate nohighlight">\(\angle ABC=B, \angle BCA=C, \angle CAB=a\)</span>とする。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+c^2 = a^2 + b^2 - 2ab \cos C\\
+a^2 = b^2 + c^2 - 2bc \cos A\\
+b^2 = c^2 + a^2 - 2ca \cos B
+\end{split}\]</div>
+<section id="id9">
+<h3>例題：２辺１角の情報から他辺を求める<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(a = 3, b = 5, C = 60^{\circ}\)</span> のとき、<span class="math notranslate nohighlight">\(c\)</span> を求めよ。<br />
+– <a class="reference external" href="https://study-club.jp/news/seigen-yogen/">スタディクラブ</a></p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+c^2=a^2+b^2-2ab \cos Cより、\\
+c^2 = 3^2+5^2-2\cdot 3 \cdot 5 \cdot \cos 60^{\circ}\\
+=9+25-30 \dfrac{1}{2}\\
+=34-15\\
+= 19\\
+\therefore c = \sqrt{19}
+\end{split}\]</div>
+</section>
+</section>
+<section id="id10">
+<h2>極限<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lim_{x\to 0}\dfrac{\sin x}{x}=1\\
+\lim_{x\to 0}\dfrac{x}{\sin x}=1\\
+\lim_{x\to 0}\dfrac{\tan x}{x}=1\\
+\lim_{x\to 0}\dfrac{x}{\tan x}=1\\
+\lim_{x\to 0}\dfrac{1- \cos x}{x^2}=\dfrac{1}{2}\\
+\lim_{x\to 0}\dfrac{x^2}{1- \cos x}=2\\\end{split}\]</div>
+</section>
+<section id="id11">
+<h2>微分<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+(\sin x)' = \cos x\\
+(\cos x)' = -\sin x\\
+(\tan x)' = \dfrac{1}{\cos^2 x}
+\end{split}\]</div>
+<section id="id12">
+<h3>導出<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+(\sin x)' = \lim_{h \to 0} \dfrac{\sin(x+h) - \sin x}{h}\\
 \end{split}\]</div>
 </section>
 </section>
