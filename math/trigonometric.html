@@ -285,6 +285,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/noypeban/noypeban.github.io/master?urlpath=tree/docs/math/trigonometric.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -352,6 +381,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="../_sources/math/trigonometric.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="../_sources/math/trigonometric.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -413,62 +459,67 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   定義
+   三角形の辺の比による定義
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   公式
+   単位円による定義
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
+   公式
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
    加法定理
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id6">
      導出
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id7">
    正弦定理
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id8">
      例題：１角２辺の情報から他辺を求める
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
+  <a class="reference internal nav-link" href="#id9">
    余弦定理
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id10">
      例題：２辺１角の情報から他辺を求める
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
+  <a class="reference internal nav-link" href="#id11">
    極限
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
+  <a class="reference internal nav-link" href="#id12">
    微分
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
+    <a class="reference internal nav-link" href="#id13">
      導出
     </a>
    </li>
@@ -495,62 +546,67 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   定義
+   三角形の辺の比による定義
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   公式
+   単位円による定義
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
+   公式
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
    加法定理
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id6">
      導出
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id7">
    正弦定理
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id8">
      例題：１角２辺の情報から他辺を求める
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
+  <a class="reference internal nav-link" href="#id9">
    余弦定理
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id10">
      例題：２辺１角の情報から他辺を求める
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
+  <a class="reference internal nav-link" href="#id11">
    極限
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
+  <a class="reference internal nav-link" href="#id12">
    微分
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
+    <a class="reference internal nav-link" href="#id13">
      導出
     </a>
    </li>
@@ -569,7 +625,125 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>三角関数<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <section id="id2">
-<h2>定義<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>三角形の辺の比による定義<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">LA</span> <span class="c1"># 行列計算のため</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">pat</span> <span class="c1"># 図形描画のため</span>
+
+<span class="k">def</span> <span class="nf">my_triangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">arrow</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+  <span class="c1"># 三角形</span>
+  <span class="n">patch</span> <span class="o">=</span> <span class="n">pat</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="n">points</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">clip_on</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+
+  <span class="c1"># 角マーク</span>
+  <span class="n">ang</span> <span class="o">=</span> <span class="mi">45</span>
+  <span class="n">arc</span> <span class="o">=</span> <span class="n">pat</span><span class="o">.</span><span class="n">Arc</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">theta2</span><span class="o">=</span><span class="n">ang</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">arc</span><span class="p">)</span>
+
+  <span class="c1"># 角度ラベル</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\theta$&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">xytext</span><span class="o">=</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">]),</span> <span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+  <span class="c1"># 直角マーク</span>
+  <span class="n">rec_size</span> <span class="o">=</span> <span class="mf">0.1</span>
+  <span class="n">rec</span> <span class="o">=</span> <span class="n">pat</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">rec_size</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">width</span><span class="o">=</span><span class="n">rec_size</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">rec_size</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+
+  <span class="c1"># 辺ラベル</span>
+  <span class="k">for</span> <span class="n">p1_num</span><span class="p">,</span> <span class="n">p2_num</span><span class="p">,</span> <span class="n">arrow</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">arrows</span><span class="p">:</span>
+    <span class="c1"># 辺を描くための２点</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">p1_num</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">p2_num</span><span class="p">,</span> <span class="p">:]</span>
+    
+    <span class="c1"># 辺p1p2の中点</span>
+    <span class="n">p4</span> <span class="o">=</span> <span class="n">p1</span><span class="o">+</span><span class="p">(</span><span class="n">p2</span><span class="o">-</span><span class="n">p1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> 
+    <span class="c1"># 辺Cp1を左に90度回転させた点</span>
+    <span class="n">p5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span> <span class="o">@</span><span class="p">(</span><span class="n">p2</span><span class="o">-</span><span class="n">p4</span><span class="p">)</span> <span class="o">+</span> <span class="n">p4</span> 
+
+    <span class="c1"># 辺ラベル</span>
+    <span class="k">if</span> <span class="n">arrow</span><span class="p">:</span>
+      <span class="n">p5</span> <span class="o">=</span> <span class="p">(</span><span class="n">p5</span><span class="o">-</span><span class="n">p4</span><span class="p">)</span><span class="o">/</span><span class="n">LA</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p5</span><span class="o">-</span><span class="n">p4</span><span class="p">)</span><span class="o">*</span><span class="mf">0.2</span> <span class="o">+</span> <span class="n">p4</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">p5</span> <span class="o">=</span> <span class="p">(</span><span class="n">p5</span><span class="o">-</span><span class="n">p4</span><span class="p">)</span><span class="o">/</span><span class="n">LA</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p5</span><span class="o">-</span><span class="n">p4</span><span class="p">)</span><span class="o">*</span><span class="mf">0.1</span> <span class="o">+</span> <span class="n">p4</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">*</span><span class="n">p5</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+            <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+    <span class="c1"># 辺矢印</span>
+    <span class="k">if</span> <span class="n">arrow</span><span class="p">:</span>
+      <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">p1</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="n">p2</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+          <span class="n">arrowstyle</span><span class="o">=</span><span class="n">arrow</span><span class="p">,</span>
+          <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="c1"># width</span>
+          <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="c1"># head size</span>
+          <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.2&quot;</span><span class="p">,</span>
+          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span>
+          <span class="p">),</span> <span class="n">annotation_clip</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+  <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span>
+          <span class="n">size</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span>
+          <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span>
+          <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+  <span class="c1"># 枠を消す</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1">## sin</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+<span class="n">arrows</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;&lt;|-&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;&lt;|-&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$\sin \theta = \dfrac</span><span class="si">{b}{a}</span><span class="s1">$&#39;</span>
+<span class="n">my_triangle</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">,</span> <span class="n">arrows</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+
+<span class="c1">## cos</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+<span class="n">arrows</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;-|&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;-|&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$\cos \theta = \dfrac</span><span class="si">{c}{a}</span><span class="s1">$&#39;</span>
+<span class="n">my_triangle</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">,</span> <span class="n">arrows</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+
+<span class="c1">## tan</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+<span class="n">arrows</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;-|&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;-|&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$\tan \theta = \dfrac</span><span class="si">{b}{c}</span><span class="s1">$&#39;</span>
+<span class="n">my_triangle</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">points</span><span class="p">,</span> <span class="n">arrows</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/trigonometric_1_0.png" src="../_images/trigonometric_1_0.png" />
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>単位円による定義<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(A\)</span>が正角<span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(B\)</span>が直角である直角三角形<span class="math notranslate nohighlight">\(\triangle ABC\)</span>を考えると、</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -591,8 +765,8 @@ cos(余弦)…余角（正角・直角以外の角）に対する弦の長さ
 tan(正接)…正角に対する接線の長さ</p>
 </div>
 </section>
-<section id="id3">
-<h2>公式<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id4">
+<h2>公式<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \sin^2 \theta + \cos^2 \theta = 1\\
@@ -624,18 +798,18 @@ tan(正接)…正角に対する接線の長さ</p>
 </div>
 </div>
 </section>
-<section id="id4">
-<h2>加法定理<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<section id="id5">
+<h2>加法定理<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}
 \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta\\\end{split}\\\begin{split}\sin(\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta\\\end{split}\\\begin{split}\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta\\\end{split}\\\begin{split}\cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta\\\end{split}\\\begin{split}\tan(\alpha + \beta) = \dfrac{\tan \alpha + \tan \beta}{1-\tan \alpha \tan \beta}\\\end{split}\\\begin{split}\tan(\alpha - \beta) = \dfrac{\tan \alpha - \tan \beta}{1+\tan \alpha \tan \beta}\\
 \end{split}\end{aligned}\end{align} \]</div>
-<section id="id5">
-<h3>導出<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
-</section>
-</section>
 <section id="id6">
-<h2>正弦定理<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<h3>導出<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="id7">
+<h2>正弦定理<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>角と正弦と、外接円の半径の関係式</p>
 <p><span class="math notranslate nohighlight">\(\triangle ABC\)</span>において<span class="math notranslate nohighlight">\(AB=c, BC=a, CA=b\)</span>とする。<br />
 <span class="math notranslate nohighlight">\(\angle ABC=B, \angle BCA=C, \angle CAB=A\)</span>とする。<br />
@@ -646,8 +820,8 @@ tan(正接)…正角に対する接線の長さ</p>
 \dfrac{b}{\sin B} = 
 \dfrac{c}{\sin C} = 2R
 \]</div>
-<section id="id7">
-<h3>例題：１角２辺の情報から他辺を求める<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<section id="id8">
+<h3>例題：１角２辺の情報から他辺を求める<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>a = 4, A = 30º, B = 105º のとき、c の値を求めよ。<br />
 – <a class="reference external" href="https://study-club.jp/news/seigen-yogen/">スタディクラブ</a></p>
@@ -671,8 +845,8 @@ c = \dfrac{4}{\sin 30^{\circ}}\times \sin 45^{\circ}\\
 \end{split}\]</div>
 </section>
 </section>
-<section id="id8">
-<h2>余弦定理<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<section id="id9">
+<h2>余弦定理<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>隣接する２辺の長さとその間の角、残りの辺の長さの関係式。</p>
 <p><span class="math notranslate nohighlight">\(\triangle ABC\)</span>において<span class="math notranslate nohighlight">\(AB=c, BC=a, CA=b\)</span>とする。<br />
 <span class="math notranslate nohighlight">\(\angle ABC=B, \angle BCA=C, \angle CAB=a\)</span>とする。</p>
@@ -682,8 +856,8 @@ c^2 = a^2 + b^2 - 2ab \cos C\\
 a^2 = b^2 + c^2 - 2bc \cos A\\
 b^2 = c^2 + a^2 - 2ca \cos B
 \end{split}\]</div>
-<section id="id9">
-<h3>例題：２辺１角の情報から他辺を求める<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<section id="id10">
+<h3>例題：２辺１角の情報から他辺を求める<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(a = 3, b = 5, C = 60^{\circ}\)</span> のとき、<span class="math notranslate nohighlight">\(c\)</span> を求めよ。<br />
 – <a class="reference external" href="https://study-club.jp/news/seigen-yogen/">スタディクラブ</a></p>
@@ -699,8 +873,8 @@ c^2 = 3^2+5^2-2\cdot 3 \cdot 5 \cdot \cos 60^{\circ}\\
 \end{split}\]</div>
 </section>
 </section>
-<section id="id10">
-<h2>極限<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id11">
+<h2>極限<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \lim_{x\to 0}\dfrac{\sin x}{x}=1\\
@@ -710,16 +884,16 @@ c^2 = 3^2+5^2-2\cdot 3 \cdot 5 \cdot \cos 60^{\circ}\\
 \lim_{x\to 0}\dfrac{1- \cos x}{x^2}=\dfrac{1}{2}\\
 \lim_{x\to 0}\dfrac{x^2}{1- \cos x}=2\\\end{split}\]</div>
 </section>
-<section id="id11">
-<h2>微分<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<section id="id12">
+<h2>微分<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 (\sin x)' = \cos x\\
 (\cos x)' = -\sin x\\
 (\tan x)' = \dfrac{1}{\cos^2 x}
 \end{split}\]</div>
-<section id="id12">
-<h3>導出<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<section id="id13">
+<h3>導出<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 (\sin x)' = \lim_{h \to 0} \dfrac{\sin(x+h) - \sin x}{h}\\
