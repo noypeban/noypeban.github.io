@@ -15,6 +15,8 @@ kernelspec:
 ## 三角形の辺の比による定義
 
 ```{code-cell} python
+:tags: [hide-input]
+
 import numpy as np
 import numpy.linalg as LA # 行列計算のため
 import matplotlib.pyplot as plt
