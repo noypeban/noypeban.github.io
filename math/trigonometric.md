@@ -1,4 +1,18 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 三角関数
+
+## 三角形の辺の比による定義
 
 ```{code-cell} python
 import numpy as np
@@ -109,7 +123,7 @@ fig.tight_layout(pad = 3.0)
 plt.show()
 ```
 
-## 定義
+## 単位円による定義
 
 $A$が正角$\theta$, $B$が直角である直角三角形$\triangle ABC$を考えると、
 
