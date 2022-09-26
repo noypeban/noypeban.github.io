@@ -341,6 +341,35 @@ $$
 $$
 
 ### 導出
+
 $$
-(\sin x)' = \lim_{h \to 0} \dfrac{\sin(x+h) - \sin x}{h}\\
+(\sin x)' = \lim_{h \to 0} \dfrac{\sin(x+h) - \sin x}{h}
 $$
+
+加法定理$\sin(x+\alpha)=\sin x \cos \alpha + \cos x \sin \alpha$を使って
+
+$$
+(\sin x)' = 
+\lim_{h \to 0} \dfrac{\sin x \cos h + \cos x \sin h - \sin x}{h}\\
+\lim_{h \to 0} \dfrac{\sin x (\cos h -1) + \cos x \sin h}{h}\\
+
+\lim_{h \to 0} 
+\dfrac{\sin x (\cos h -1) }{h} + 
+\dfrac{\cos x \sin h}{h}\\
+
+\lim_{h \to 0} 
+\dfrac{1 - \cos h}{h^2}(- h \sin x) + 
+\dfrac{\sin h}{h}\cos x\\
+$$
+
+ここで極限の公式
+$\lim_{x\to 0}\dfrac{\sin x}{x}=1$, 
+$\lim_{x\to 0}\dfrac{1- \cos x}{x^2}=\dfrac{1}{2}$を使うと、
+
+$$
+(\sin x)' = 
+\dfrac{1}{2} \cdot 0 + 1 \cdot \cos x\\
+=\cos x
+$$
+
+よって $(\sin x)' = \cos x$が導かれる。
