@@ -129,6 +129,73 @@ plt.show()
 
 単位円上の点$P(x,y)$と$x$軸の作る角$\theta$を使うと、三角関数は以下のように表せられる。
 
+```{code-cell} python
+:tags: [hide-input]
+
+import numpy as np
+import numpy.linalg as LA # 行列計算のため
+import matplotlib.pyplot as plt
+import matplotlib.patches as pat # 図形描画のため
+
+radius = 1.0
+angle = 30
+theta = np.deg2rad(angle)
+x = np.cos(theta)*radius
+y = np.sin(theta)*radius
+
+fig, ax = plt.subplots(figsize=(4,4))
+
+# 円
+circle = pat.Circle(xy=(0,0), radius=radius, fill=False, color='tab:gray')
+ax.add_patch(circle)
+
+# 斜線
+ax.plot([0,x], [0,y], color='tab:red')
+
+# 角マーク
+size = 0.5
+arc = pat.Arc(xy=(0,0), width=size, height=size, theta1=0, theta2=angle)
+ax.add_patch(arc)
+ax.annotate(r'$\theta$', xy=(0, 0), xytext=(0, 0)+np.array([0.3, 0.05]), size=14)
+
+# 半径 annotation
+ax.annotate('', arrowprops=dict(
+                arrowstyle='-',
+                connectionstyle="arc3,rad=0.2",
+                color='tab:blue'
+            ),
+            xy=(0, 0), xytext=(x, y),
+            annotation_clip=False)
+ax.text(x=x*0.35, y=y*0.75, s=1, size=14)
+# 点P annotation
+ax.annotate(r'$P(x,y)=(\cos \theta, \sin \theta)$',
+            size=16, 
+            xy=(x, y), xytext=(1, y),
+            annotation_clip=False)
+
+# 軸
+ax.set_xticks([0])
+ax.set_xticks([x, 1], minor=True)
+ax.set_xticklabels(['x', 1], minor=True)
+ax.set_yticks([0])
+ax.set_yticks([y, 1], minor=True)
+ax.set_yticklabels(['y', 1], minor=True)
+ax.set_xlim(-1.1, 1.1)
+ax.set_ylim(-1.1, 1.1)
+ax.grid(linewidth=2)
+ax.grid(which='minor', linestyle='--')
+
+# 枠を消す
+# ax.axis("off")
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.spines['left'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+
+
+plt.show()
+```
+
 $$
 \sin \theta = y\\
 \cos \theta = x\\
