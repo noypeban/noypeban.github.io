@@ -16,7 +16,7 @@ Windowsでinstall後にコマンドが見つからないとなった。
 jupyter-book create mysite
 ```
 
-なお、`jupyter-book`は所略して`jb`でも通る
+なお、`jupyter-book`は省略して`jb`でも通る
 
 ## html化
 mysiteディレクトリの1階層上で実行
