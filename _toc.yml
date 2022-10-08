@@ -9,7 +9,7 @@ parts:
     - glob: math/*
   - caption: アルゴリズム
     chapters:
-    - glob: math/algorithm/*
+    - glob: algorithm/*
   - caption: レイヤー
     chapters:
     - glob: layer/*

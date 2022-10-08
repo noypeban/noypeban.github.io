@@ -98,4 +98,4 @@ plt.show()
 $z=x+y$|$\dfrac{\partial z}{\partial x}=1$|$\dfrac{\partial z}{\partial y}=1$|$+$の逆伝播はそのまま戻す
 $z=x\times y$|$\dfrac{\partial z}{\partial x}=y$|$\dfrac{\partial z}{\partial y}=x$|$\times$の逆伝播は相手を戻す
 $z=x\div y$|$\dfrac{\partial z}{\partial x}=\dfrac{1}{y}$|$\dfrac{\partial z}{\partial y}=-\dfrac{1}{y^2}$|
-$sigmoid = \dfrac{1}{1 + \exp(-x)}$|y(1-y)||
+$sigmoid; y = \dfrac{1}{1 + \exp(-x)}$|$y^2 \exp(-x)$||
