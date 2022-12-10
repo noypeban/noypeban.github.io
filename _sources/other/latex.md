@@ -1,4 +1,4 @@
-# Latexの覚書
+# Latexの覚え書き
 
 機械学習の勉強をする際に何度も引いた`Latex`を使った数式の書き方メモ
 
@@ -68,5 +68,21 @@ S \not\supset N\\
 \\
 a \cup b\\
 a \cap b
+$$
+
+## cases
+
+```latex 
+f(x) = \begin{cases}
+1, x\leq 0\\
+x, x>0 
+\end{cases}
+```
+
+$$
+f(x) = \begin{cases}
+1, x\leq 0\\
+x, x>0 
+\end{cases}
 $$
 

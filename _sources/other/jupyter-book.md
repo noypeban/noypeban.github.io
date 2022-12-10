@@ -1,4 +1,4 @@
-# jupyter-bookの使い方
+# jupyter-bookの覚え書き
 
 ## Install
 ```sh
@@ -53,3 +53,15 @@ parse:
   ```shell
   jupyter-book build --all mybookname/
   ```
+## .venvを置くとエラー
+
+同じディレクトリに`.venv`ディレクトリを作ってjbを実行するとエラーでhtml生成ができなかった。  
+`.venv`ディレクトリの中まで実行しようとしていたのが原因の様子。  
+実行対象外ディレクトリに指定してあげるとエラーが出なくなった。
+
+[Exclude pages from your build](https://jupyterbook.org/en/stable/structure/configure.html#exclude-pages-from-your-build)
+
+```yaml
+exclude_patterns:
+  - .venv/*
+```

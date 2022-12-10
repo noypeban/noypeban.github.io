@@ -169,6 +169,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../algorithm/activation.html">
+   活性化関数
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../algorithm/backpropergation.html">
    逆伝播
   </a>
@@ -226,17 +231,22 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../other/jupyter-book.html">
-   jupyter-bookの使い方
+   jupyter-bookの覚え書き
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../other/latex.html">
-   Latexの覚書
+   Latexの覚え書き
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../other/python.html">
+   pythonの覚え書き
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../other/vscode.html">
-   vscode関係
+   vscodeの覚え書き
   </a>
  </li>
 </ul>
@@ -528,6 +538,7 @@ P(A)=\sum_{i=1}^k P(A\cap B_k)
 <div><p>5回に1回の割合で帽子を忘れるくせのあるK君が正月に A，B，C の3軒を順に訪問して家に帰ったとき，帽子を忘れてきたことに気がついた。2軒目の家 B に忘れてきた確率を求めよ。
 – <a class="reference external" href="https://manabitimes.jp/math/804">高校数学の美しい物語</a></p>
 </div></blockquote>
+<div class="toggle docutils container">
 <ul class="simple">
 <li><p>事象E: 帽子を忘れる</p></li>
 <li><p>事象A、B、C：それぞれの家に行く</p></li>
@@ -542,11 +553,13 @@ P = (1-P(A))\times P(B)\\
 =\dfrac{4}{5}\times \dfrac{1}{4}\\
 =\dfrac{1}{4}
 \end{split}\]</div>
+</div>
 <blockquote>
 <div><p>1から3の目が赤色で塗られており、4から6の目は青色で塗られているさいころがある。<br />
 今、このさいころを投げて青色の目が出た時、この目が偶数である確率を求めよ。<br />
 –<a class="reference external" href="https://bellcurve.jp/statistics/course/7873.html">統計web</a></p>
 </div></blockquote>
+<div class="toggle docutils container">
 <ul class="simple">
 <li><p>事象A: サイコロの目が偶数</p></li>
 <li><p>事象B: サイコロの目が青色</p></li>
@@ -563,6 +576,7 @@ P(B) = \dfrac{|B|}{|U|} = \dfrac{3}{6}
 P(A \cap B) = \dfrac{2}{6}\\\end{split}\\\begin{split}\therefore P(A|B) = \dfrac{P(A \cap B)}{P(B)}\\
 = \dfrac{2}{3}
 \end{split}\end{aligned}\end{align} \]</div>
+</div>
 <blockquote>
 <div><p>表と裏の面が赤か青で塗られている3枚のカードA, B, Cがあり、それぞれのカードの面の色は次のようになっている。</p>
 <ul class="simple">
@@ -573,6 +587,7 @@ P(A \cap B) = \dfrac{2}{6}\\\end{split}\\\begin{split}\therefore P(A|B) = \dfrac
 <p>このカード3枚を袋に入れてよく混ぜて、目をつぶったまま1枚を取り出し、机の上に置いて目を開けるとカードは赤色だった。このとき、ひっくり返した面も赤色である確率を求めよ。<br />
 –<a class="reference external" href="https://bellcurve.jp/statistics/course/7873.html">統計web</a></p>
 </div></blockquote>
+<div class="toggle docutils container">
 <ul class="simple">
 <li><p>事象A: カードが赤色</p></li>
 <li><p>事象B: 裏面も赤色</p></li>
@@ -615,10 +630,12 @@ P(A)=\dfrac{3}{6}\\
 P(A \cap B) = \dfrac{2}{6}\\
 P(B|A) = \dfrac{2}{3}
 \end{split}\]</div>
+</div>
 <blockquote>
 <div><p>一郎、二郎、三郎、四郎の4人がボウリングでストライクを出す確率は50%, 70%, 90%, 98%である。4人のうち1人が球を投げてストライクを出したときに、それが一郎である確率はいくらか。<br />
 –<a class="reference external" href="https://bellcurve.jp/statistics/course/7873.html">統計web</a></p>
 </div></blockquote>
+<div class="toggle docutils container">
 <ul class="simple">
 <li><p>事象A: 4人のうち一人がストライクを出す</p></li>
 <li><p>事象B: それが一郎である</p></li>
@@ -632,9 +649,11 @@ P(A) = \dfrac{1}{4} \times \dfrac{50+70+90+98}{100}\\
 P(B|A) = \dfrac{50}{308}=\dfrac{25}{154}\\
 \fallingdotseq 0.16\\\end{split}\\確率は16\%
 \end{aligned}\end{align} \]</div>
+</div>
 <blockquote>
 <div><p>ある映画の試写会を行い、満足度のアンケート調査を行った。試写会に参加したのは300人でそのうち女性が180人であり、満足したと回答したのは男性の50％、女性の75％であった。この映画を見て満足しなかったと答えた人が女性である確率はいくらか。</p>
 </div></blockquote>
+<div class="toggle docutils container">
 <ul class="simple">
 <li><p>事象A: 満足しなかった</p></li>
 <li><p>事象B: 回答者は女性</p></li>
@@ -672,10 +691,12 @@ P(A|B) = \dfrac{45}{105}\\
 \fallingdotseq 0.4285\\
 割合は42\%
 \end{split}\]</div>
+</div>
 <blockquote>
 <div><p>人の「疲れ」を判定する機械が発明された。この機械に人が入ると「疲れている」か「疲れていない」かを判定してくれる画期的なものである。この機械を使うと、疲れている人の95％を「疲れている」と判定し、疲れていない人の98％を「疲れていない」と判定するということが分かっている。</p>
 <p>人の70%は疲れているという研究結果があるとき、ある人がこの機械に入って「疲れている」と判定された場合に実際に疲れている確率はいくらか。（すべて架空の話です）</p>
 </div></blockquote>
+<div class="toggle docutils container">
 <ul class="simple">
 <li><p>事象A: 疲れている判定</p></li>
 <li><p>事象B: 実際に疲れている</p></li>
@@ -696,6 +717,7 @@ P(A \cap B) = \dfrac{95}{100} \times \dfrac{70}{100}\\
 = 0.9910581222056632\\
 確率は約99.1%
 \end{split}\end{aligned}\end{align} \]</div>
+</div>
 </section>
 </section>
 
